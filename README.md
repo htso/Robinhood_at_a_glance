@@ -18,13 +18,13 @@ To run my scripts, you need to download it from his site (see __Data Sources__ b
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. 
 
 | Ticker    |  Company Name   | Mar 20 Holding | Current Holdings | Pct Change |
-| -----------|--------|---------|---------|
+| -----------|--------|---------|---------|------|
 |    F  |  Ford | 303,352  |  904,254 |    |
 |   GE  |  General Electric |291,234  |  817,346 |    |
 |     AAL |  American Airline  |61,748  |  643,567 |  |
 |  DIS  | Disney |167,922  |  605,648 |   |
 |  DAL  |   Delta Airline | 62,161  |  594,703 | |
-|  CCL  |   | 49,300  |  500,496 | |
+|  CCL  |  Carnival | 49,300  |  500,496 | |
 | GPRO  | GoPro |208,416  |  487,691 | |
 | MSFT  |  Microsoft |219,815  |  474,344 | |
 |    ACB  |  |461,893  |  465,437 | |
@@ -76,7 +76,12 @@ interest, the holding on Mar 20 must be at least 10k.
 
  
 ### Data Sources
-All data used here originated from Robinhood. The popularity data come from robintrack[1]
+Popularity data originated from Robinhood, but is sourced from *robintrack*[1]. 
+Price data is from Yahoo Finance[2].
+
+## Scripts
+
+
 
 ### Install Software
 To install R, press Ctrl+Alt+T to open a terminal
@@ -98,4 +103,4 @@ References
 
 [1] https://robintrack.net
 
-[2] 
+[2] https://finance.yahoo.com/
