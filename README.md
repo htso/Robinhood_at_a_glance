@@ -6,8 +6,10 @@ which has user holdings up till Jun 20, 2020.
 
 [Robinhood](https://robinhood.com) is a discount broker which charges zero commission for stock trading. It has gained almost a cult following in
 recent years, particularly among the millennials. Unlike other brokers, it publishes aggregate data about what stocks its
-users own, and this is what it calls the popularity data. For example, in the table below, it shows there are 904,254 stock accounts in Robinhood 
-that owns some amount of Ford. Robinhood does not publish the number of shares each account holds. 
+users own, and that is the *popularity data* I analyse here. 
+
+For example, in the table below, it shows there are 904,254 stock accounts in Robinhood 
+that owns shares in Ford. However, Robinhood does not publish the exact number of shares each account holds. 
 
 Since the dataset is sizeable and it belongs to *robintrack*, I do not include it in this repo. 
 To run my scripts, you need to download it from his site (see __Data Sources__ below) and place it under the `data` subdirectory.
@@ -21,12 +23,12 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 |   GE  |  General Electric |291,234  |  817,346 |    |
 |     AAL |  American Airline  |61,748  |  643,567 |  |
 |  DIS  | Disney |167,922  |  605,648 |   |
-|  DAL  |   Delta Airline | 62,161  |  594,703 |
-|  CCL  |   | 49,300  |  500,496 | 
-| GPRO  | GoPro |208,416  |  487,691 |
-| MSFT  |  Microsoft |219,815  |  474,344 |
-|    ACB  |  |461,893  |  465,437 |
-|   AAPL  |  Apple |224,299  |  438,283 |
+|  DAL  |   Delta Airline | 62,161  |  594,703 | |
+|  CCL  |   | 49,300  |  500,496 | |
+| GPRO  | GoPro |208,416  |  487,691 | |
+| MSFT  |  Microsoft |219,815  |  474,344 | |
+|    ACB  |  |461,893  |  465,437 | |
+|   AAPL  |  Apple |224,299  |  438,283 | |
 
 ## Stocks held by at least 100k accounts
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
