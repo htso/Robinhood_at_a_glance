@@ -43,7 +43,7 @@ Just a quick scan of the most popular holdings. Notice that some of these are ET
 
 
 ## Largest % increase since Mar 20
-I use the holding level on March 20 as the base for comparison since that's the bottom of this bear market -- so far. 
+Holdings in these stocks have gone up mutiple times. I use March 20 as the base level for comparison since that's the bottom of this bear market -- so far. 
 
     
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
@@ -64,15 +64,17 @@ I use the holding level on March 20 as the base for comparison since that's the 
 Who is falling out of favor. To make sure we're not picking up penny stocks with little
 interest, the holding on Mar 20 must be at least 10k. 
 
-      tkr base_holding cur_holding  pct_change
-1738   CY     10437.11      7514.5 -28.0021199
-4020   IQ     38409.43     28256.2 -26.4342153
-5097   MU     58209.85     51520.3 -11.4921324
-6220 QLGN     11524.77     11104.8  -3.6440576
-8208  WMG     14117.89     13779.0  -2.4004218
-4257 JNUG     41869.29     40870.1  -2.3864464
-7476 TMBR     13788.03     13542.9  -1.7778486
-8034  VRM     17046.08     16914.5  -0.7719271
+
+| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
+| -----------|--------|---------|---------|------|
+|   CY  |Cypress Semiconductor |   10437 |     7514|  -28 |
+|   IQ  |iQIYI|   38409 |     28256| -26 |
+|   MU |Micron|    58209|     51520| -11|
+| QLGN  |Qualigen Therapeutics|   11524|     11104|  -3.6|
+|  WMG  |Warner Music|   14117|     13779|  -2.4|
+| JNUG  |Direxion Gold Miners Bull 2X|   41869|  40870|  -2.4|
+| TMBR  |Timber Pharma|   13788|     13543|  -1.7|
+|  VRM   |Vroom|  17046|     16914|  -0.8|
 
 
 
