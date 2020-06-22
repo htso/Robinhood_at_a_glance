@@ -63,6 +63,11 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
 |  CPE  |Callon Petroleum|   9,960  |  115,889 |  1,063|
 | SHIP  |Seanergy Maritime|   6,775  |   78,600 |  1,060|
 
+Hertz is a travel stock that just went bankrupt, has been all over the news. `SAVE` is an airline. `XSPA` provides spa services at airports, so it's in same category as airlines. The two oil stocks and the ETF are obvious bets on oil rebound. `IVR` is a mortgage REIT that almost went bankrupt. `GNUS` is a stay-at-home stock, which caters to family with kids locked up at home. 
+
+So, we have evidences of two prominent themes on Robinhood : 1) big bets on oil, 2) big bets on travel recovery, or not.
+
+
 
 ![top_ten](plots/Largest_incr.png)
 
