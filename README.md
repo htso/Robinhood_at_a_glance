@@ -84,7 +84,7 @@ interest, the holding on Mar 20 must be at least 10k.
 |  VRM   |Vroom|  17,046|     16,914|  -0.8|
 
 
-
+-----
  
 ### Data Sources
 Popularity data originated from Robinhood, the history of which is downloaded from *robintrack*[1]. 

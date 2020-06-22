@@ -1,4 +1,4 @@
-# robintrack.R -- read robintrack popularity CSV files.
+# robintrack.R -- read and analyse robintrack popularity CSV files.
 # Horace W. Tso (c)
 # Jun 20, 2020
 
@@ -87,9 +87,6 @@ decr_nm = head(df2, 10)[,"tkr"]
 for (s in top_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
 for (s in incr_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
 for (s in decr_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
-
-
-
 
 # Time Series Plots (one yr)
 setwd(plot_dir)
