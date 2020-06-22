@@ -15,7 +15,8 @@ Since the dataset is sizeable and it belongs to *robintrack*, I do not include i
 To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
 ## Top 10 Holdings
-These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. 
+These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the beaten-up airlines and cruise operator (`AAL`, `DAL`, `CCL`). But there are also the stable tech stock fan as in `MSFT`  and `AAPL`.
+
 
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
 | -----------|--------|---------|---------|------|
