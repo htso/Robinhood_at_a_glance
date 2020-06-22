@@ -19,16 +19,16 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
 | -----------|--------|---------|---------|------|
-|    F  |  Ford | 303,352  |  904,254 |  198  |
-|   GE  |  General Electric |291,234  |  817,346 | 180  |
-|     AAL |  American Airline  |61,748  |  643,567 | 942 |
-|  DIS  | Disney |167,922  |  605,648 | 260  |
-|  DAL  |   Delta Airline | 62,161  |  594,703 | 856 |
-|  CCL  |  Carnival | 49,300  |  500,496 | 915 |
-| GPRO  | GoPro |208,416  |  487,691 | 134|
-| MSFT  |  Microsoft |219,815  |  474,344 | 115 |
-|    ACB  | Aurora Cannabis |461,893  |  465,437 | 0.7|
-|   AAPL  |  Apple |224,299  |  438,283 | 95 |
+|    F  |  Ford | 514,021  |  904,254 |  76  |
+|   GE  |  General Electric |422,513  |  817,346 | 93  |
+|     AAL |  American Airline  |138,644  |  643,567 | 364 |
+|  DIS  | Disney |352,817  |  605,648 | 72  |
+|  DAL  |   Delta Airline | 118,470  |  594,703 | 402 |
+|  CCL  |  Carnival | 111,887  |  500,496 | 347 |
+| GPRO  | GoPro |357,279  |  487,691 | 36|
+| MSFT  |  Microsoft |367,735  |  474,344 | 29 |
+|    ACB  | Aurora Cannabis |743,858  |  465,437 | -37|
+|   AAPL  |  Apple |292,418  |  438,283 | 49 |
 
 Below I plot the popularity over time against the price since Jun 2019. The key observation here is that a surge in the accounts occured at around the last week of March, or near the market bottom -- sorry I know it's hard to read the date.  
 
@@ -46,22 +46,21 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
     
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
 | -----------|--------|---------|---------|------|
-| GNUS   | Genius Brands |  6,140 |   190,193  | 2,997 |
-|  HTZ   | Hertz|  7,126 |   163,226|  2,190|
-|  IVR   | Invesco Mortgage|  7,974  |  144,370 |  1,710|
-|  UCO  |ProShares Ultra Crude Oil|  11,363  |  164,385 |  1,346|
-| XSPA  |XpresSpa |   6,462  |   90,944 |  1,307|
-| SAVE  |Spirit Airlines|  17,886  |  231,562 |  1,194|
-|  OAS  |Oasis Petroleum|   8,338  |  103,812 |  1,144|
-| PLAY  |Dave Buster's Ent|   9,114  |  107,744 |  1,082|
-|  CPE  |Callon Petroleum|   9,960  |  115,889 |  1,063|
-| SHIP  |Seanergy Maritime|   6,775  |   78,600 |  1,060|
-
-Hertz is a travel stock that just went bankrupt, has been all over the news. `SAVE` is an airline. `XSPA` provides spa services at airports, so it's in same category as airlines. The two oil stocks and the ETF are obvious bets on oil rebound. `IVR` is a mortgage REIT that almost went bankrupt. `GNUS` is a stay-at-home stock, which caters to family with kids locked up at home. 
-
-So, we have evidences of two prominent themes on Robinhood : 1) big bets on oil, 2) big bets on travel recovery, or not.
+|  IVR   | Invesco Mortgage|  1,323  |  144,370 |  10,812|
+| GNUS   | Genius Brands |  3,532 |   190,193  | 5,284 |
+| SHIP  |Seanergy Maritime|   1,757  |   78,600 |  4,373|
+|  UCO  |ProShares Ultra Crude Oil|  3,955  |  164,385 |  4,056|
+|  HTZ   | Hertz|  4,970 |   163,226|  3,184|
+| MFA   | MFA Financial | 5,614 |  180,614 | 3,117 |
+| XSPA  |XpresSpa |   2,849  |   90,944 |  3,092|
+| TOPS  | Top Ships  |    7,537 |   180,647 | 2,297 |
+| VTIQ  | VectoIQ Acquisition  |       5,110  |   86,881 | 1,600 |
+| USO  | U.S. Oil Fund  |   19,737  |  175,211 |  788 |
 
 
+`IVR` is a mortgage REIT that almost went bankrupt.  `GNUS` is a stay-at-home stock, which caters to family with kids locked up at home.  Hertz is a travel stock that just went bankrupt, has been all over the news. `XSPA` provides spa services at airports, so it's in same category as airlines. The two oil ETFs (`USO`, `UCO`) and the two tanker stocks (`TOPS`, `SHIP`) are obvious bets on oil rebound. VTIQ, which has merged and become Nikola, is an outlier.
+
+So, we have evidence of one prominent theme on Robinhood : big bets on oil.
 
 ![top_ten](plots/Largest_incr.png)
 

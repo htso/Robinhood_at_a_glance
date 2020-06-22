@@ -9,37 +9,44 @@ home = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance"
 utils = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/utils"
 plot_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/plots"
 dat_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/robintrack_popularity_export"
+dat_dir = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/robintrack_popularity_export"
 setwd(home)
 
 source(paste(utils, "/Fun.R", sep=""))
 
+# Get all CSV file names
 nm = list.files(path=dat_dir, all.files=FALSE, include.dirs=FALSE)
 nm = nm[3:length(nm)]
 (N = length(nm))
-
+# Build vector of ticker symbols 
 tkr = sapply(strsplit(x=nm, split="\\."), parse_ticker)
-# Check
+# Check for issues
 sum(is.na(tkr)) # expect 0
-
+# Read CSV files, convert them to xts objects, save them to the data_env environment
 setwd(dat_dir)
 data_env = new.env()
 res = sapply(nm, read_convert_save2env, data_env=data_env)
-# Check
-len(ls(envir=data_env)) == len(nm) # expect TRUE
+# Check : # tickers match # of time series
+length(ls(envir=data_env)) == length(nm) # expect TRUE
+# Check : time series lengths
+X11();hist(res)
+# Data issue : some time series are much longer than others. Duplicate entries. 
+which(res > 18000)
+# Need to talk to the robintrack guy.
+
 setwd(home)
-
-
+# Aggregate the hourly data to daily and weekly and put them in a list
 ll = sweep_env(data_env, day_wk_aggregator)
 # Check + statistics on each ticker dataset
 cnt = table(sapply(ll, function(.s) nrow(.s[["y_daily"]])))
 sum(cnt[which(as.integer(names(cnt)) > 365)]) / len(tkr)
 # [1] 0.8450455
-# 84% of the tickers have more than 1 yr of data
+# ==> 84% of the tickers have more than 1 yr of data
 table(sapply(ll, function(.s) nrow(.s[["dy_daily"]])))
 cnt = table(sapply(ll, function(.s) nrow(.s[["y_wk"]])))
 sum(cnt[which(as.integer(names(cnt)) > 52)]) / len(tkr)
 # [1] 0.8488
-# 84% of the tickers have more than 52 wks of data
+# ==> 84% of the tickers have more than 52 wks of data
 table(sapply(ll, function(.s) nrow(.s[["dy_wk"]])))
 
 # ==== Basic statistics about the robintrack dataset =========================================
@@ -50,11 +57,9 @@ table(sapply(ll, function(.s) nrow(.s[["dy_wk"]])))
 # 4. Stocks with holding increased or decreased since Mar 20 ? and by how much in %, show top 5, plots
 # 5. Stocks with holding increased or decreased since Jun 1 ? and by how much in %, show top 5, plots
 # 6. Greatest variability in past three months, show top 5, plots
-# 7. 
-# 
 
 # 2. Top holdings
-df = as.data.frame(t(sapply(ll, latest_stat)))
+df = as.data.frame(t(sapply(ll, latest_stat, "2020-03-20")))
 df[,"tkr"] = as.character(df[,"tkr"])
 df[,"base_holding"] = as.numeric(df[,"base_holding"])
 df[,"cur_holding"] = as.numeric(df[,"cur_holding"])
@@ -75,6 +80,18 @@ df2 = df[which(df[,"pct_change"] < 0 & df[,"base_holding"] > 10000),]
 dim(df2)
 df2 = df2[order(df2[,"pct_change"], decreasing =FALSE),]
 decr_nm = head(df2, 10)[,"tkr"]
+
+# 5. largest percentage increase since Jun 1
+df3 = as.data.frame(t(sapply(ll, latest_stat, "2020-06-01")))
+df3[,"tkr"] = as.character(df3[,"tkr"])
+df3[,"base_holding"] = as.numeric(df3[,"base_holding"])
+df3[,"cur_holding"] = as.numeric(df3[,"cur_holding"])
+df3[,"pct_change"] = 100*(df3[,"cur_holding"] / df3[,"base_holding"] - 1)
+df3 = df3[order(df3[,"cur_holding"], decreasing = TRUE),]
+df4 = head(df3, 100)
+df4 = df4[order(df4[,"pct_change"], decreasing=TRUE),]
+incr_nm = head(df4, 10)[,"tkr"]
+
 
 # 6. variability over time
 
