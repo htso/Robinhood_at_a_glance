@@ -63,7 +63,6 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
 | SHIP  |Seanergy Maritime|   6,775  |   78,600 |  1,060|
 
 
-
 ![top_ten](plots/Largest_incr.png)
 
 
@@ -86,9 +85,6 @@ interest, the holding on Mar 20 must be at least 10k.
 
 
 
-
-
-
  
 ### Data Sources
 Popularity data originated from Robinhood, the history of which is downloaded from *robintrack*[1]. 
@@ -96,8 +92,9 @@ Popularity data originated from Robinhood, the history of which is downloaded fr
 Price data is from Yahoo Finance[2].
 
 ## Scripts
+The main script is `robintrack.R` where the CSV files are parsed and aggregated into daily and weekly data. It calls the functions in `Fun.R` under subdirectory `utils`.
 
-
+To use this script, you need to download the CSV files from robintrack and save them in the subdirectory `robintrack_popularity_export`. 
 
 ### Install Software
 To install R, press Ctrl+Alt+T to open a terminal

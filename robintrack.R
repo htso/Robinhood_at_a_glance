@@ -9,7 +9,7 @@ library(xtable)
 home = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance"
 utils = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/utils"
 plot_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/plots"
-dat_dir = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/robintrack_popularity_export"
+dat_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/robintrack_popularity_export"
 setwd(home)
 
 source(paste(utils, "/Fun.R", sep=""))
@@ -145,8 +145,7 @@ for ( s in decr_nm ) {
 }
 dev.off()
 
-
-
+setwd(home)
 save.image("Robintrack.RData")
 
 
