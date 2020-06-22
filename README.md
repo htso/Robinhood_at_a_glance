@@ -14,7 +14,7 @@ that owns shares in Ford. However, Robinhood does not publish the exact number o
 Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not include it here. To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
 ## Top 10 Holdings
-These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the beaten-up airlines and cruise operator (`AAL`, `DAL`, `CCL`). But there are also the stable tech stock fans as in `MSFT`  and `AAPL`.
+These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the two beaten-up airlines and one cruise operator (`AAL`, `DAL`, `CCL`). But there are also the big tech fans as in `MSFT`  and `AAPL`.
 
 
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
@@ -30,7 +30,8 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 |    ACB  | Aurora Cannabis |461,893  |  465,437 | 0.7|
 |   AAPL  |  Apple |224,299  |  438,283 | 95 |
 
-Below I plot the popularity over time against the price since Jun 2019. 
+Below I plot the popularity over time against the price since Jun 2019. The key observation here is that a surge in the accounts occured at around the last week of March, or near the market bottom -- sorry I know it's hard to read the date.  
+
 
 ![top_ten](plots/Top_10.png)
 
