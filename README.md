@@ -114,7 +114,7 @@ To use this script, you need to download the CSV files, a total of 8,467 of them
 
 Unlike python, you're not supposed to run this R script on the command line. The best way to use the capability here is to install `Rstudio` and run the script one block at a time.
 
-For the Python folks, the R language doesn't use and need any loop. 
+For python folks, the R language doesn't use or need many (or any) loops :)
 
 
 ### Install Software
