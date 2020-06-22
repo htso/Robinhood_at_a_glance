@@ -80,19 +80,25 @@ head(df2, 10)
 
 # 6. variability over time
 
+# Get YF stock prices
+for (s in top_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
 
 # Time Series Plots (one yr)
 setwd(plot_dir)
-png("Top_10.png", width = 1080, height=480)
-par(mfrow=c(2,5), mar=c(2,2,2,2))
+png("Top_10.png", width = 1080, height=640)
+par(mfrow=c(3,4), mar=c(2,2,2,2))
 for ( s in top_nm ) {
-  y = get(s, envir=data_env)["2019-06::"]
-  tick.loc = as.integer(seq.int(from=1, to=nrow(y), length.out=10))
-  df3 = data.frame(date=index(y), y=as.numeric(y))
-  ix = which(as.Date(df3[,"date"]) == as.Date("2020-03-20") )
-  plot(y~date, data=df3, xlab="", ylab="", xaxt="n", type="l", main=s)
-  abline(v=ix)
-  axis(1, at=df3[tick.loc,"date"], labels=format(df3[tick.loc,"date"], "%b-%d"), cex.axis=0.6)
+  ix = which(tkr == s)
+  y = ll[[ix]]$y_daily["2019-06::"]
+  df3 = data.frame(date=as.Date(index(y)), y=as.numeric(y))
+  y1 = get(s)["2019-06::", 6]
+  df4 = data.frame(date=index(y1), y1=as.numeric(y1))
+  df5 = merge(x=df3, y=df4, by="date", all.x=FALSE, all.y=TRUE)
+  tick.loc = as.integer(seq.int(from=1, to=nrow(df5), length.out=10))
+  plot(y~date, data=df5, xlab="", ylab="", xaxt="n", type="l", lwd=5, col="red", main=s)
+  par(new=TRUE)
+  plot(y1~date, data=df5, xlab="", ylab="", xaxt="n", yaxt="n", type="l", lwd=1, col="blue" )
+  axis(1, at=df5[tick.loc,"date"], labels=format(df5[tick.loc,"date"], "%b-%d"), cex.axis=0.6)
 }
 dev.off()
 
