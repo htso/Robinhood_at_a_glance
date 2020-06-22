@@ -12,7 +12,7 @@ For example, in the table below, it shows there are 904,254 stock accounts in Ro
 that owns shares in Ford. However, Robinhood does not publish the exact number of shares each account holds. 
 
 Since the dataset is sizeable and it belongs to *robintrack*, I do not include it in this repo. 
-To run my scripts, you need to download it from his site (see __Data Sources__ below) and place it under the `data` subdirectory.
+To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
 ## Top 10 Holdings
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. 
