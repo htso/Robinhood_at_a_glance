@@ -94,7 +94,12 @@ Price data is from Yahoo Finance[2].
 ## Scripts
 The main script is `robintrack.R` where the CSV files are parsed and aggregated into daily and weekly data. It calls the functions in `Fun.R` under subdirectory `utils`.
 
-To use this script, you need to download the CSV files from robintrack and save them in the subdirectory `robintrack_popularity_export`. 
+To use this script, you need to download the CSV files, a total of 8,467 of them from *robintrack* and save them in the subdirectory `robintrack_popularity_export`. 
+
+Unlike python, you're not supposed to run this R script on the command line. The best way to use the capability here is to install `Rstudio` and run the script one block at a time.
+
+For the Python folks, the R language doesn't use and need any loop. 
+
 
 ### Install Software
 To install R, press Ctrl+Alt+T to open a terminal
