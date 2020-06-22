@@ -62,7 +62,7 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
 
 So, we have evidence of one prominent theme on Robinhood : big bets on oil.
 
-![top_ten](plots/Largest_incr.png)
+![largest_incr](plots/Largest_incr.png)
 
 
 
@@ -84,8 +84,12 @@ To make sure we're not picking up the thinly traded stocks with little interest,
 | GUSH   |Direxion Oil Gas Bull 2X |     30439  |   27219 | -10|
 | APT    |Alpha Pro Tech|    11203   |  10136 | -9.5|
 
-These names are being shunned by the Robinhood community. It's not clear there's any pattern here. Since Robinhood has been growing rapidly with hundreds of thousands of  accounts added every month, these stocks have seen a drop in holding, meaning not only new investors avoided them, existing accounts closed out previous positions.
-   
+These names are being shunned by the Robinhood community. Since Robinhood has been growing rapidly with hundreds of thousands of accounts added every month, these stocks have seen a drop in total holding, meaning not only new investors avoided them, existing accounts have closed out previous positions.
+
+It's not clear there's any pattern here.
+
+![largest_decr](plots/Largest_decr.png)   
+
 
 ## Stocks held by at least 100k accounts
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. Interestingly, `QQQ` is not on this list.
