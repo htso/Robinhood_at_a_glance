@@ -67,21 +67,30 @@ top_nm = head(df, 10)[,"tkr"]
 df[which(df[,"cur_holding"] > 100000), "tkr"]
 
 # 4. largest percentage increase since Mar 20
-
 df1 = head(df, 100)
 df1 = df1[order(df1[,"pct_change"], decreasing=TRUE),]
-head(df1, 10)
+incr_nm = head(df1, 10)[,"tkr"]
 
 # 4.1 largest percentage decrease since Mar 20
 df2 = df[which(df[,"pct_change"] < 0 & df[,"base_holding"] > 10000),]
 dim(df2)
 df2 = df2[order(df2[,"pct_change"], decreasing =FALSE),]
-head(df2, 10)
+decr_nm = head(df2, 10)[,"tkr"]
 
 # 6. variability over time
 
+
+
+
+
+
 # Get YF stock prices
 for (s in top_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
+for (s in incr_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
+for (s in decr_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
+
+
+
 
 # Time Series Plots (one yr)
 setwd(plot_dir)
@@ -101,6 +110,42 @@ for ( s in top_nm ) {
   axis(1, at=df5[tick.loc,"date"], labels=format(df5[tick.loc,"date"], "%b-%d"), cex.axis=0.6)
 }
 dev.off()
+
+png("Largest_incr.png", width = 1080, height=640)
+par(mfrow=c(3,4), mar=c(2,2,2,2))
+for ( s in incr_nm ) {
+  ix = which(tkr == s)
+  y = ll[[ix]]$y_daily["2019-06::"]
+  df3 = data.frame(date=as.Date(index(y)), y=as.numeric(y))
+  y1 = get(s)["2019-06::", 6]
+  df4 = data.frame(date=index(y1), y1=as.numeric(y1))
+  df5 = merge(x=df3, y=df4, by="date", all.x=FALSE, all.y=TRUE)
+  tick.loc = as.integer(seq.int(from=1, to=nrow(df5), length.out=10))
+  plot(y~date, data=df5, xlab="", ylab="", xaxt="n", type="l", lwd=5, col="red", main=s)
+  par(new=TRUE)
+  plot(y1~date, data=df5, xlab="", ylab="", xaxt="n", yaxt="n", type="l", lwd=1, col="blue" )
+  axis(1, at=df5[tick.loc,"date"], labels=format(df5[tick.loc,"date"], "%b-%d"), cex.axis=0.6)
+}
+dev.off()
+
+png("Largest_decr.png", width = 1080, height=640)
+par(mfrow=c(3,4), mar=c(2,2,2,2))
+for ( s in decr_nm ) {
+  ix = which(tkr == s)
+  y = ll[[ix]]$y_daily["2019-06::"]
+  df3 = data.frame(date=as.Date(index(y)), y=as.numeric(y))
+  y1 = get(s)["2019-06::", 6]
+  df4 = data.frame(date=index(y1), y1=as.numeric(y1))
+  df5 = merge(x=df3, y=df4, by="date", all.x=FALSE, all.y=TRUE)
+  tick.loc = as.integer(seq.int(from=1, to=nrow(df5), length.out=10))
+  plot(y~date, data=df5, xlab="", ylab="", xaxt="n", type="l", lwd=5, col="red", main=s)
+  par(new=TRUE)
+  plot(y1~date, data=df5, xlab="", ylab="", xaxt="n", yaxt="n", type="l", lwd=1, col="blue" )
+  axis(1, at=df5[tick.loc,"date"], labels=format(df5[tick.loc,"date"], "%b-%d"), cex.axis=0.6)
+}
+dev.off()
+
+
 
 save.image("Robintrack.RData")
 

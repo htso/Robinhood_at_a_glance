@@ -30,7 +30,7 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 |    ACB  | Aurora Cannabis |461,893  |  465,437 | 0.7|
 |   AAPL  |  Apple |224,299  |  438,283 | 95 |
 
-Below I plot the popularity changes over time against the price during the same period. 
+Below I plot the popularity over time against the price during since Jun 2019. 
 
 ![top_ten](plots/Top_10.png)
 
@@ -51,19 +51,20 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
     
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
 | -----------|--------|---------|---------|------|
-| GNUS   | Genius Brands |  6140 |   190193  | 2997 |
-|  HTZ   | Hertz|  7126 |   163226|  2190|
-|  IVR   | Invesco Mortgage|  7974  |  144370 |  1710|
-|  UCO  |ProShares Ultra Crude Oil|  11363  |  164385 |  1346|
-| XSPA  |XpresSpa |   6462  |   90944 |  1307|
-| SAVE  |Spirit Airlines|  17886  |  231562 |  1194|
-|  OAS  |Oasis Petroleum|   8338  |  103812 |  1144|
-| PLAY  |Dave Buster's Ent|   9114  |  107744 |  1082|
-|  CPE  |Callon Petroleum|   9960  |  115889 |  1063|
-| SHIP  |Seanergy Maritime|   6775  |   78600 |  1060|
+| GNUS   | Genius Brands |  6,140 |   190,193  | 2,997 |
+|  HTZ   | Hertz|  7,126 |   163,226|  2,190|
+|  IVR   | Invesco Mortgage|  7,974  |  144,370 |  1,710|
+|  UCO  |ProShares Ultra Crude Oil|  11,363  |  164,385 |  1,346|
+| XSPA  |XpresSpa |   6,462  |   90,944 |  1,307|
+| SAVE  |Spirit Airlines|  17,886  |  231,562 |  1,194|
+|  OAS  |Oasis Petroleum|   8,338  |  103,812 |  1,144|
+| PLAY  |Dave Buster's Ent|   9,114  |  107,744 |  1,082|
+|  CPE  |Callon Petroleum|   9,960  |  115,889 |  1,063|
+| SHIP  |Seanergy Maritime|   6,775  |   78,600 |  1,060|
 
 
 
+![top_ten](plots/Largest_incr.png)
 
 
 
@@ -74,14 +75,14 @@ interest, the holding on Mar 20 must be at least 10k.
 
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
 | -----------|--------|---------|---------|------|
-|   CY  |Cypress Semiconductor |   10437 |     7514|  -28 |
-|   IQ  |iQIYI|   38409 |     28256| -26 |
-|   MU |Micron|    58209|     51520| -11|
-| QLGN  |Qualigen Therapeutics|   11524|     11104|  -3.6|
-|  WMG  |Warner Music|   14117|     13779|  -2.4|
-| JNUG  |Direxion Gold Miners Bull 2X|   41869|  40870|  -2.4|
-| TMBR  |Timber Pharma|   13788|     13543|  -1.7|
-|  VRM   |Vroom|  17046|     16914|  -0.8|
+|   CY  |Cypress Semiconductor |   10,437 |     7,514|  -28 |
+|   IQ  |iQIYI|   38,409 |     28,256| -26 |
+|   MU |Micron|    58,209|     51,520| -11|
+| QLGN  |Qualigen Therapeutics|   11,524|     11,104|  -3.6|
+|  WMG  |Warner Music|   14,117|     13,779|  -2.4|
+| JNUG  |Direxion Gold Miners Bull 2X|   41,869|  40,870|  -2.4|
+| TMBR  |Timber Pharma|   13,788|     13,543|  -1.7|
+|  VRM   |Vroom|  17,046|     16,914|  -0.8|
 
 
 
