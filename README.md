@@ -15,7 +15,7 @@ Since the dataset is sizeable and it belongs to *robintrack*, I do not include i
 To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
 ## Top 10 Holdings
-These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the beaten-up airlines and cruise operator (`AAL`, `DAL`, `CCL`). But there are also the stable tech stock fan as in `MSFT`  and `AAPL`.
+These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the beaten-up airlines and cruise operator (`AAL`, `DAL`, `CCL`). But there are also the stable tech stock fans as in `MSFT`  and `AAPL`.
 
 
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
@@ -31,7 +31,7 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 |    ACB  | Aurora Cannabis |461,893  |  465,437 | 0.7|
 |   AAPL  |  Apple |224,299  |  438,283 | 95 |
 
-Below I plot the popularity over time against the price during since Jun 2019. 
+Below I plot the popularity over time against the price since Jun 2019. 
 
 ![top_ten](plots/Top_10.png)
 
