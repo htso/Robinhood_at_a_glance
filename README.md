@@ -30,16 +30,19 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 |    ACB  | Aurora Cannabis |461,893  |  465,437 | 0.7|
 |   AAPL  |  Apple |224,299  |  438,283 | 95 |
 
+Below I plot the popularity changes over time against the price during the same period. 
+
 ![top_ten](plots/Top_10.png)
+
+Red line : Robinhood's popularity, or user holding. Blue line : stock price.
+
 
 ## Stocks held by at least 100k accounts
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
 
-`"F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "ACB"  "AAPL" "NCLH" "UAL"  "BA"   "BAC"  "FIT"` 
-`"PLUG" "SNAP" "TSLA" "HEXO" "CGC"  "AMZN" "RCL"  "SAVE" "UBER" "INO"  "CRON" "TWTR" "AMD"  "BABA" "FB"`  
-`"GRPN" "MRNA" "ZNGA" "MGM"  "MRO"  "SBUX" "LUV"  "APHA" "KO"   "JBLU" "T"    "GNUS" "TOPS" "MFA"  "USO"` 
-`"OGI"  "XOM"  "UCO"  "HTZ"  "NIO"  "NKLA" "IVR"  "LK"   "NFLX" "GM"   "AMC"  "SPCE" "NOK"  "CPE"  "VOO"` 
-`"CTST" "NRZ"  "NVDA" "PENN" "PLAY" "TLRY" "CPRX" "DKNG" "OAS"  "SIRI" "WORK" "SPY"` 
+`"F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "ACB"  "AAPL" "NCLH" "UAL"  "BA"   "BAC"  "FIT"
+"PLUG" "SNAP" "TSLA" "HEXO" "CGC"  "AMZN" "RCL"  "SAVE" "UBER" "INO"  "CRON" "TWTR" "AMD"  "BABA" "FB" "GRPN" "MRNA" "ZNGA"
+"MGM"  "MRO"  "SBUX" "LUV"  "APHA" "KO"   "JBLU" "T"    "GNUS" "TOPS" "MFA"  "USO" "OGI"  "XOM"  "UCO"  "HTZ"  "NIO"  "NKLA" "IVR"  "LK"   "NFLX" "GM"   "AMC"  "SPCE" "NOK"  "CPE"  "VOO" "CTST" "NRZ"  "NVDA" "PENN" "PLAY" "TLRY" "CPRX" "DKNG" "OAS"  "SIRI" "WORK" "SPY"` 
 
 
 ## Largest % increase since Mar 20
@@ -58,6 +61,10 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
 | PLAY  |Dave Buster's Ent|   9114  |  107744 |  1082|
 |  CPE  |Callon Petroleum|   9960  |  115889 |  1063|
 | SHIP  |Seanergy Maritime|   6775  |   78600 |  1060|
+
+
+
+
 
 
 ## Largest decrease since Mar 20
@@ -83,7 +90,8 @@ interest, the holding on Mar 20 must be at least 10k.
 
  
 ### Data Sources
-Popularity data originated from Robinhood, but is sourced from *robintrack*[1]. 
+Popularity data originated from Robinhood, the history of which is downloaded from *robintrack*[1]. 
+
 Price data is from Yahoo Finance[2].
 
 ## Scripts
