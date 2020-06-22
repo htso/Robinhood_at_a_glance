@@ -39,7 +39,7 @@ Red line : Robinhood's popularity, or user holding. Blue line : stock price.
 
 
 ## Stocks held by at least 100k accounts
-Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
+Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. Interestingly, `QQQ` is not on this list.
 
 `"F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "ACB"  "AAPL" "NCLH" "UAL"  "BA"   "BAC"  "FIT"
 "PLUG" "SNAP" "TSLA" "HEXO" "CGC"  "AMZN" "RCL"  "SAVE" "UBER" "INO"  "CRON" "TWTR" "AMD"  "BABA" "FB" "GRPN" "MRNA" "ZNGA"
@@ -69,8 +69,9 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
 
 
 ## Largest decrease since Mar 20
-Who is falling out of favor. To make sure we're not picking up penny stocks with little
-interest, the holding on Mar 20 must be at least 10k. 
+Who is falling out of favor? 
+
+To make sure we're not picking up the thinly traded stocks with little interest, the holding on Mar 20 must be at least 10k. 
 
 
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
