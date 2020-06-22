@@ -1,6 +1,6 @@
 # Robinhood at a Glance
 
-This is a preamble to full scale modeling the Robinhood popularity data using machine learning. Before I do that, I want to 
+This is a preamble to full scale modeling of the Robinhood popularity data using machine learning. Before I do that, I want to 
 take a glance of the current market as seen in the Robinhood community. Here I use the dataset provided in [*robintrack*](https://robintrack.net), 
 which has user holdings up till Jun 20, 2020. 
 
@@ -11,8 +11,7 @@ users own, and that is the *popularity data* I analyse here.
 For example, in the table below, it shows there are 904,254 stock accounts in Robinhood 
 that owns shares in Ford. However, Robinhood does not publish the exact number of shares each account holds. 
 
-Since the dataset is sizeable and it belongs to *robintrack*, I do not include it in this repo. 
-To run my scripts, you need to download it from his site -- see __Data Sources__ below.
+Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not include it here. To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
 ## Top 10 Holdings
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the beaten-up airlines and cruise operator (`AAL`, `DAL`, `CCL`). But there are also the stable tech stock fans as in `MSFT`  and `AAPL`.
