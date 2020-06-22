@@ -17,7 +17,7 @@ To run my scripts, you need to download it from his site (see __Data Sources__ b
 ## Top 10 Holdings
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. 
 
-| Ticker    |  Company Name   | Mar 20 Holding | Current Holdings | Pct Change |
+| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Pct Change |
 | -----------|--------|---------|---------|------|
 |    F  |  Ford | 303,352  |  904,254 |    |
 |   GE  |  General Electric |291,234  |  817,346 |    |
@@ -27,8 +27,10 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 |  CCL  |  Carnival | 49,300  |  500,496 | |
 | GPRO  | GoPro |208,416  |  487,691 | |
 | MSFT  |  Microsoft |219,815  |  474,344 | |
-|    ACB  |  |461,893  |  465,437 | |
+|    ACB  | Aurora Cannabis |461,893  |  465,437 | |
 |   AAPL  |  Apple |224,299  |  438,283 | |
+
+![top_ten](plots/Top_10.png)
 
 ## Stocks held by at least 100k accounts
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
@@ -43,7 +45,8 @@ Just a quick scan of the most popular holdings. Notice that some of these are ET
 ## Largest % increase since Mar 20
 I use the holding level on March 20 as the base for comparison since that's the bottom of this bear market -- so far. 
 
-   tkr base_holding cur_holding pct_change
+    base_holding cur_holding pct_change
+
  GNUS     6140.289    190193.4   2997.466
   HTZ     7126.183    163226.1   2190.512
   IVR     7974.688    144370.2   1710.355
