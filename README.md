@@ -54,7 +54,7 @@ Holdings in these stocks have gone up mutiple times. I use March 20 as the base 
 | MFA   | MFA Financial | 5,614 |  180,614 | 3,117 |
 | XSPA  |XpresSpa |   2,849  |   90,944 |  3,092|
 | TOPS  | Top Ships  |    7,537 |   180,647 | 2,297 |
-| VTIQ  | VectoIQ Acquisition  |       5,110  |   86,881 | 1,600 |
+| VTIQ[3]  | VectoIQ (Nikola)  |       5,110  |   86,881 | 1,600 |
 | USO  | U.S. Oil Fund  |   19,737  |  175,211 |  788 |
 
 
@@ -71,19 +71,21 @@ Who is falling out of favor?
 
 To make sure we're not picking up the thinly traded stocks with little interest, the holding on Mar 20 must be at least 10k. 
 
-
 | Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
 | -----------|--------|---------|---------|------|
-|   CY  |Cypress Semiconductor |   10,437 |     7,514|  -28 |
-|   IQ  |iQIYI|   38,409 |     28,256| -26 |
-|   MU |Micron|    58,209|     51,520| -11|
-| QLGN  |Qualigen Therapeutics|   11,524|     11,104|  -3.6|
-|  WMG  |Warner Music|   14,117|     13,779|  -2.4|
-| JNUG  |Direxion Gold Miners Bull 2X|   41,869|  40,870|  -2.4|
-| TMBR  |Timber Pharma|   13,788|     13,543|  -1.7|
-|  VRM   |Vroom|  17,046|     16,914|  -0.8|
+|  ACB  |Aurora Cannabis|     743858 |   465437 | -37|
+|  APRN  |Blue Apron|      13838 |     9159 | -33|
+| WTRH   |Waitr Holdings|     20028  |   14435 | -28|
+|  OPK   |OPKO Health|     44611  |   32637 | -27|
+| UVXY   |ProShares Ultra VIX Futures |     14938  |   11209 | -25|
+| CODX   |Co-Diagnostics|     32054  |   25410 | -21|
+| CORV   |Correvio Pharma|     10290  |    8432 | -18|
+| IRBT   |iRobot |     10296  |    8617 | -16|
+| GUSH   |Direxion Oil Gas Bull 2X |     30439  |   27219 | -10|
+| APT    |Alpha Pro Tech|    11203   |  10136 | -9.5|
 
-These names are really being shunned by the Robinhood community, since Robinhood has been growing rapidly, with large number of new accounts opened in the past three months. 
+These names are being shunned by the Robinhood community. It's not clear there's any pattern here. Since Robinhood has been growing rapidly with hundreds of thousands of  accounts added every month, these stocks have seen a drop in holding, meaning not only new investors avoided them, existing accounts closed out previous positions.
+   
 
 ## Stocks held by at least 100k accounts
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. Interestingly, `QQQ` is not on this list.
@@ -132,6 +134,8 @@ References
 [1] https://robintrack.net
 
 [2] https://finance.yahoo.com/
+
+[3] VectoIQ has merged with Nikola and ceased to trade on NASDAQ. 
 
 -----
 
