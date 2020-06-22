@@ -5,7 +5,6 @@
 library(quantmod)
 library(xtable)
 
-
 home = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance"
 utils = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/utils"
 plot_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/plots"
@@ -147,5 +146,4 @@ dev.off()
 
 setwd(home)
 save.image("Robintrack.RData")
-
 

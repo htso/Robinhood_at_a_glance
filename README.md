@@ -122,3 +122,27 @@ References
 [1] https://robintrack.net
 
 [2] https://finance.yahoo.com/
+
+-----
+
+The information in this presentation is provided for information purposes only. It is not intended to be and does not
+constitute financial advice or any other advice, is general in nature and not specific to you. Before using this
+information to make an investment decision, you should seek the advice of a qualified and registered securities
+professional and undertake your own due diligence. None of the information here is intended as investment advice,
+as an offer or solicitation of an offer to buy or sell, or as a recommendation, endorsement, or sponsorship of any
+security, Company, or fund. I am not responsible for any investment decision made by you. You are responsible for
+your own investment research and investment decisions.
+
+The information in this presentation is based on financial models, and trading signals are generated mathematically.
+All of the signals, timing systems, and forecasts are the result of backtesting, and are therefore merely hypothetical.
+Trading signals or forecasts used to produce our results were derived from equations which were developed through
+hypothetical reasoning based on a variety of factors. Theoretical buy and sell methods were tested against the past
+to prove the profitability of those methods in the past. Performance generated through back testing has many and
+possibly serious limitations. I do not claim that the historical performance of the timing systems, signals or forecasts
+will be indicative of future results. There will be substantial and possibly extreme dierences between historical
+performance and future performance. Past performance is no guarantee of future performance. There is no
+guarantee that out-of-sample performance will match that of prior in-sample performance. I provide absolutely no
+guarantee that the trading signals, forecasts, opinions or analyses presented here are consistent, logical or free from
+hindsight or other bias or that the data used to generate signals in the backtests was available to investors on the
+dates for which theoretical signals were generated.
+
