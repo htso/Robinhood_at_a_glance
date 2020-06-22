@@ -17,18 +17,18 @@ To run my scripts, you need to download it from his site (see __Data Sources__ b
 ## Top 10 Holdings
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. 
 
-| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Pct Change |
+| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
 | -----------|--------|---------|---------|------|
-|    F  |  Ford | 303,352  |  904,254 |    |
-|   GE  |  General Electric |291,234  |  817,346 |    |
-|     AAL |  American Airline  |61,748  |  643,567 |  |
-|  DIS  | Disney |167,922  |  605,648 |   |
-|  DAL  |   Delta Airline | 62,161  |  594,703 | |
-|  CCL  |  Carnival | 49,300  |  500,496 | |
-| GPRO  | GoPro |208,416  |  487,691 | |
-| MSFT  |  Microsoft |219,815  |  474,344 | |
-|    ACB  | Aurora Cannabis |461,893  |  465,437 | |
-|   AAPL  |  Apple |224,299  |  438,283 | |
+|    F  |  Ford | 303,352  |  904,254 |  198  |
+|   GE  |  General Electric |291,234  |  817,346 | 180  |
+|     AAL |  American Airline  |61,748  |  643,567 | 942 |
+|  DIS  | Disney |167,922  |  605,648 | 260  |
+|  DAL  |   Delta Airline | 62,161  |  594,703 | 856 |
+|  CCL  |  Carnival | 49,300  |  500,496 | 915 |
+| GPRO  | GoPro |208,416  |  487,691 | 134|
+| MSFT  |  Microsoft |219,815  |  474,344 | 115 |
+|    ACB  | Aurora Cannabis |461,893  |  465,437 | 0.7|
+|   AAPL  |  Apple |224,299  |  438,283 | 95 |
 
 ![top_ten](plots/Top_10.png)
 
@@ -45,18 +45,20 @@ Just a quick scan of the most popular holdings. Notice that some of these are ET
 ## Largest % increase since Mar 20
 I use the holding level on March 20 as the base for comparison since that's the bottom of this bear market -- so far. 
 
-    base_holding cur_holding pct_change
+    
+| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
+| -----------|--------|---------|---------|------|
+| GNUS   | Genius Brands |  6140 |   190193  | 2997 |
+|  HTZ   | Hertz|  7126 |   163226|  2190|
+|  IVR   | Invesco Mortgage|  7974  |  144370 |  1710|
+|  UCO  |ProShares Ultra Crude Oil|  11363  |  164385 |  1346|
+| XSPA  |XpresSpa |   6462  |   90944 |  1307|
+| SAVE  |Spirit Airlines|  17886  |  231562 |  1194|
+|  OAS  |Oasis Petroleum|   8338  |  103812 |  1144|
+| PLAY  |Dave Buster's Ent|   9114  |  107744 |  1082|
+|  CPE  |Callon Petroleum|   9960  |  115889 |  1063|
+| SHIP  |Seanergy Maritime|   6775  |   78600 |  1060|
 
- GNUS     6140.289    190193.4   2997.466
-  HTZ     7126.183    163226.1   2190.512
-  IVR     7974.688    144370.2   1710.355
-  UCO    11363.767    164385.9   1346.579
- XSPA     6462.812     90944.8   1307.202
- SAVE    17886.208    231562.4   1194.642
-  OAS     8338.789    103812.6   1144.936
- PLAY     9114.457    107744.7   1082.130
-  CPE     9960.971    115889.4   1063.435
- SHIP     6775.849     78600.6   1060.011
 
 ## Largest decrease since Mar 20
 Who is falling out of favor. To make sure we're not picking up penny stocks with little

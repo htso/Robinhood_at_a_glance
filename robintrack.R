@@ -59,6 +59,7 @@ df = as.data.frame(t(sapply(ll, latest_stat)))
 df[,"tkr"] = as.character(df[,"tkr"])
 df[,"base_holding"] = as.numeric(df[,"base_holding"])
 df[,"cur_holding"] = as.numeric(df[,"cur_holding"])
+df[,"pct_change"] = 100*(df[,"cur_holding"] / df[,"base_holding"] - 1)
 df = df[order(df[,"cur_holding"], decreasing = TRUE),]
 top_nm = head(df, 10)[,"tkr"]
 
@@ -66,7 +67,7 @@ top_nm = head(df, 10)[,"tkr"]
 df[which(df[,"cur_holding"] > 100000), "tkr"]
 
 # 4. largest percentage increase since Mar 20
-df[,"pct_change"] = 100*(df[,"cur_holding"] / df[,"base_holding"] - 1)
+
 df1 = head(df, 100)
 df1 = df1[order(df1[,"pct_change"], decreasing=TRUE),]
 head(df1, 10)
