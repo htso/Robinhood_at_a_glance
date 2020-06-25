@@ -1,4 +1,42 @@
 
+abrupt_change = function(xt, thres=10000) {
+  tkr = colnames(xt)[1]
+  dx = diff(xt, lag=1)
+  big.change = any(abs(dx) > thres)
+  return(list(tkr=tkr, big.change=big.change))
+}
+
+
+holding_below_threshold = function(xt, thres=1e-2) {
+  tkr = colnames(xt)[1]
+  ave = mean(xt, na.rm=TRUE)
+  med = median(xt, na.rm=TRUE)
+  latest_n = mean(tail(xt, 24), na.rm=TRUE) # last 24 hours or roughly one day
+  ave.below = ifelse(ave < thres, TRUE, FALSE) 
+  med.below = ifelse(med < thres, TRUE, FALSE) 
+  latest.n.below = ifelse(latest_n < thres, TRUE, FALSE)
+  return(list(tkr=tkr, ave.below=ave.below, med.below=med.below, latest.n.below=latest.n.below))
+}
+
+
+
+
+xts_time_spacing = function(xt) {
+  tkr = colnames(xt)[1]
+  tdt = index(xt)
+  # NOTE : there's a bug in diff(tdt). Sometimes it gives delta in minute, other time in second.
+  # Instead, use difftime which allows unit to be specified. 
+  tmp = difftime(tail(tdt,-1), head(tdt,-1), units="secs") # set unit to smallest time interval
+  dtdt = as.integer(tmp) # delta in seconds
+  granu = cut(dtdt, breaks=c(0, 60*5, 60*30,60*60,12*60*60,24*60*60,Inf), 
+              labels=c("5min", "halfhr", "1hr", "halfday", "1day", "morethan"), 
+              include.lowest=FALSE, right=TRUE, ordered_result = TRUE)
+  tb = table(granu)
+  return(list(tkr=tkr, granu=tb))
+}
+
+
+
 
 parse_ticker = function(s) {
   if(length(s) == 2) {
@@ -48,11 +86,6 @@ day_wk_aggregator = function(xt) {
 }
 
 
-sweep_env = function(env, fun) {
-  tkr = ls(envir=env)
-  ll = lapply(tkr, function(.s) fun(get(.s, envir=env)))
-  return(ll)
-}
 
 
 latest_stat = function(le, base_date) {
@@ -63,6 +96,11 @@ latest_stat = function(le, base_date) {
 }
 
 
+sweep_env = function(env, fun, ...) {
+  tkr = ls(envir=env)
+  ll = lapply(tkr, function(.s) fun(get(.s, envir=env), ...))
+  return(ll)
+}
 
 
 

@@ -13,6 +13,11 @@ that owns shares in Ford. However, Robinhood does not publish the exact number o
 
 Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not include it here. To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
+## Data Exploratory Analysis
+
+See [this](Data_Exploration.md)
+
+
 ## Top 10 Holdings
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the two beaten-up airlines and one cruise operator (`AAL`, `DAL`, `CCL`). But there are also the big tech fans as in `MSFT`  and `AAPL`.
 
@@ -106,6 +111,13 @@ Just a quick scan of the most popular holdings. Notice that some of these are ET
 Popularity data originated from Robinhood, the history of which is downloaded from *robintrack*[1]. 
 
 Price data is from Yahoo Finance[2].
+
+### Data Issues
+
+
+
+
+
 
 ## Scripts
 The main script is `robintrack.R` where the CSV files are parsed and aggregated into daily and weekly data. It calls the functions in `Fun.R` under subdirectory `utils`.
