@@ -15,7 +15,7 @@ Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not 
 
 ## Data Exploratory Analysis
 
-See [this](Data_Exploration.md)
+I show some properties of this dataset and found some issues, see [this](Data_Exploration.md).
 
 
 ## Top 10 Holdings
@@ -111,12 +111,6 @@ Just a quick scan of the most popular holdings. Notice that some of these are ET
 Popularity data originated from Robinhood, the history of which is downloaded from *robintrack*[1]. 
 
 Price data is from Yahoo Finance[2].
-
-### Data Issues
-
-
-
-
 
 
 ## Scripts

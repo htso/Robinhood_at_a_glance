@@ -1,12 +1,18 @@
-# Exploring the robintrack data
+# Exploring the *robintrack* data
 
+As of Jun 20, the robintrack data comes in a total of 8,467 csv files, each file corresponds to one stock ticker.
 
+### Length of history
 
- 
 
 ### Time steps
 
 
+### Stocks with no user interest
+
+
+
+### Abrupt changes in user holding
 
 
 
