@@ -22,11 +22,17 @@ tkr = sapply(strsplit(x=nm, split="\\."), parse_ticker)
 # Read CSV files, convert them to xts objects, save them to the data_env environment
 setwd(dat_dir)
 data_env = new.env()
-res = sapply(nm, read_convert_save2env, data_env=data_env)
+Len = sapply(nm, read_convert_save2env, data_env=data_env)
+summary(Len)
+# Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#  19   15136   17828   15097   17861   32077 
 # time series lengths
-X11();hist(res)
+setwd(home)
+png("LengthDistrib.png", width=640, height=480)
+hist(Len, breaks=35, xlab="No of observations in a CSV file", main="Distribution of Time Series Lengths")
+dev.off()
 # Data issue : some time series are much longer than others. Duplicate entries. 
-which(res > 18000)
+which(Len > 18000)
 
 
 # Look at their time steps =================================================
