@@ -6,7 +6,9 @@ As of Jun 20, the robintrack data comes in a total of 8,467 csv files, each file
 
 ### Time Series Length
 
-![top_ten](plots/LengthDistrib.png)
+<p align="center"> 
+<img src="plots/LengthDistrib1.png">
+</p>
 
 
 ### Time steps
