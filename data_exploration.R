@@ -32,19 +32,25 @@ png("LengthDistrib.png", width=640, height=480)
 hist(Len, breaks=35, xlab="No of observations in a CSV file", main="Distribution of Time Series Lengths")
 dev.off()
 # Data issue : some time series are much longer than others. Duplicate entries. 
-which(Len > 18000)
-
+which(Len > 25000)
+# 9
+EBR.csv GEF.csv HEI.csv HVT.csv LEN.csv MKC.csv PBR.csv STZ.csv WSO.csv 
+2136    3125    3476    3661    4543    4906    5739    7214    8247
 
 # Look at their time steps =================================================
 ll = sweep_env(data_env, xts_time_spacing)
 # Over all the tickers, what percent of the time intervals falls in the half-hr to 1 hr bucket?
 pct_1hr = sapply(ll, function(.x) .x[["granu"]][["1hr"]] / sum(.x[["granu"]]))
-X11();hist(pct_1hr, breaks=30)
+png("OneHrIntervalDistrib.png", width=640, height=480)
+hist(pct_1hr, breaks=30, xlab="Fraction of 1-hr Intervals", main="Distribution of One-Hour Intervals")
+dev.off()
 # Observation : Most of the data are spaced by 1 hour. 
 
 # Over all the tickers, what percent of the time intervals falls in the 0 to 5-min bucket?
 pct_5min = sapply(ll, function(.x) .x[["granu"]][["5min"]] / sum(.x[["granu"]]))
-X11();hist(pct_5min, breaks=30)
+png("5minIntervalDistrib.png", width=640, height=480)
+hist(pct_5min, breaks=30, xlab="Fraction of 5-min Intervals", main="Distribution of 5-min Intervals")
+dev.off()
 # Observation : very few. But there are some tickers with more than 40% deltas in the 5min bucket. 
 # That smells trouble. Who are these ?
 sapply(which(pct_5min > 0.2), function(.i)ll[[.i]][["tkr"]]) # more than 20% of intervals are in this 5-min bucket
@@ -70,7 +76,7 @@ sapply(which(ix.ave), function(.i)ll1[[.i]][["tkr"]])
 [34] "PLCY"  "PQDI"  "QLVD"  "REFA"  "RNDM"  "RNEM"  "ROCH"  "RTR"   "SCNB"  "SCON"  "SFIG" 
 [45] "SPRO"  "SQBG"  "STMB"  "TAL"   "TIG"   "TIVO"  "UBNK"  "VRAY"  "VXX"  
 
-sapply(which(ix.med), function(.i)ll1[[.i]][["tkr"]])
+len(sapply(which(ix.med), function(.i)ll1[[.i]][["tkr"]]))
 [1] "AA"    "ABAX"  "ABCD"  "AFCB"  "AFLG"  "AGC"   "ALZH"  "AMHC"  "ANCX"  "ANDV" 
 [11] "APB"   "API"   "APL"   "APTI"  "ARVR"  "AVHI"  "BBOX"  "BDCX"  "BHAC"  "BHACU"
 [21] "BKAG"  "BKEM"  "BKIE"  "BKMC"  "BKSE"  "BLH"   "BMAY"  "BNKO"  "BNKZ"  "BOJA" 
@@ -137,15 +143,35 @@ sapply(which(ix.latest), function(.i)ll1[[.i]][["tkr"]])
 ll2 = sweep_env(data_env, abrupt_change, thres=20000)
 ix.big.ch = sapply(ll2, function(.x).x[["big.change"]])
 sapply(which(ix.big.ch), function(.i)ll2[[.i]][["tkr"]])
-X11();plot(data_env$ACB) # stock split ?
-X11();plot(data_env$GNUS) # sharp rise is real !
-X11();plot(data_env$IGC) # chunk of data is missing 
-X11();plot(data_env$INPX) # chunk of data is missing  
-X11();plot(data_env$NKLA) # sharp rise is real
-X11();plot(data_env$UBER) # no issue
-X11();plot(data_env$UCO) # problem with one or two data points
-X11();plot(data_env$USO) # not sure why such sharp drop
-X11();plot(data_env$WORK) # coincide with price gap down
+
+png("ACB.png", width=640, height=480)
+plot(data_env$ACB) # stock split ?
+dev.off()
+png("GNUS.png", width=640, height=480)
+plot(data_env$GNUS) # sharp rise is real !
+dev.off()
+png("IGC.png", width=640, height=480)
+plot(data_env$IGC) # chunk of data is missing 
+dev.off()
+png("INPX.png", width=640, height=480)
+plot(data_env$INPX) # chunk of data is missing  
+dev.off()
+png("NKLA.png", width=640, height=480)
+plot(data_env$NKLA) # sharp rise is real
+dev.off()
+png("UBER.png", width=640, height=480)
+plot(data_env$UBER) # no issue
+dev.off()
+png("UCO.png", width=640, height=480)
+plot(data_env$UCO) # problem with one or two data points
+dev.off()
+png("USO.png", width=640, height=480)
+plot(data_env$USO) # not sure why such sharp drop
+dev.off()
+png("WORK.png", width=640, height=480)
+plot(data_env$WORK) # coincide with price gap down
+dev.off()
+
 
 
 # Which tickers have seen user holding falling to zero from at least 10k in Feb ?

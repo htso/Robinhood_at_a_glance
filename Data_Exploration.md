@@ -3,23 +3,38 @@
 As of Jun 20, the robintrack data comes in a total of 8,467 csv files, each file corresponds to one stock.
 
 
-
 ### Time Series Length
+
+Most of the time series started in May 2018, so they have a little over two years of history. Below shows the distribution of the lengths of the time series. 
 
 <p align="center"> 
 <img src="plots/LengthDistrib1.png">
 </p>
 
+There are a few outliers with far more data points than others:
+`EBR.csv GEF.csv HEI.csv HVT.csv LEN.csv MKC.csv PBR.csv STZ.csv WSO.csv`
 
-### Time steps
+### Size of Time Steps
+Most of the data are spaced by one hour, i.e. *robintrack* takes a snapshot of the popularity data from Robinhood every 60 minutes. However, this seems to vary from ticker to ticker. Below shows the distribution of percent of 1-hour intervals.
+
+<p align="center"> 
+<img src="plots/OneHrIntervalDistrib.png">
+</p>
 
 
 ### Stocks with no user interest
-
+Some stocks have attracted little interest from the Robinhood community. There is a total of 330 tickers with close to zero user holding over the two year period. Below is a random sample of 10 of them.
+`"DWMF" "ELON" "PBSM" "QXMI" "VIIZ" "OQAL" "VXX"  "INPX" "REIS" "XMHQ"`
 
 
 ### Abrupt changes in user holding
+Here I show the stocks with some abrupt changes in the user holdings. There are 5 of them.
 
+`"ACB"  "GNUS" "IGC"  "INPX" "NKLA" "USO"`
+
+<p align="center"> 
+<img src="plots/abrupt.png">
+</p>
 
 
 
