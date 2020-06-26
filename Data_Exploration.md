@@ -37,7 +37,6 @@ Here I show the stocks with some abrupt changes in the user holdings. There are 
 </p>
 
 
-
 ## Scripts
 The script for the above exercises is `data_exploration.R` which needs the functions in `Fun.R` under `utils`.
 
