@@ -28,7 +28,7 @@ These 10 stocks saw the biggest percent increase in user holdings last week, whe
 The surprise is `NIO`, the chinese EV maker, which has a GS downgrade last week.
 
 
-<p align="center"> 
+<p align="left"> 
 <img src="plots/Incr_since_lastwk.png" width="100%">
 </p>
 
