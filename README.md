@@ -28,12 +28,10 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 <img src="plots/Top10_table.png" width="200%">
 </p>
 
-![An image](plots/Top10_table.png) <!-- .element height="500%" width="500%" -->
-
 
 __Changes this week__ : Every stock on this list saw an increase in user holding, except `ACB` and `CCL`. 
 
-Below I plot the popularity over time against the price since Jun 2019. The key observation here is that a surge in the accounts occured at around the last week of March, or near the market bottom -- sorry I know it's hard to read the date.  
+Below I plot the popularity over time against the price since Jun 2019. The key observation here is that a surge in the accounts occured at around the last week of March, or near the market bottom -- sorry it's hard to see the dates.  
 
 
 ![top_ten](plots/Top_10_charts.png)
