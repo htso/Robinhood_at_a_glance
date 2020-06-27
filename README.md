@@ -25,10 +25,10 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 
 
 <p align="center"> 
-<img src="plots/Top10_table.png" width="600" height="600">
+<img src="plots/Top10_table.png" width="200%">
 </p>
 
-![An image](plots/Top10_table.png) <!-- .element height="200%" width="200%" -->
+![An image](plots/Top10_table.png) <!-- .element height="500%" width="500%" -->
 
 
 __Changes this week__ : Every stock on this list saw an increase in user holding, except `ACB` and `CCL`. 
