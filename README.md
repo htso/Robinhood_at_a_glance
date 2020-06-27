@@ -29,7 +29,7 @@ The surprise is `NIO`, the chinese EV maker, which has a GS downgrade last week.
 
 
 <p align="center"> 
-<img src="plots/Incr_since_lastwk.png" width="200%">
+<img src="plots/Incr_since_lastwk.png" width="180%">
 </p>
 
 
@@ -38,7 +38,7 @@ The surprise is `NIO`, the chinese EV maker, which has a GS downgrade last week.
 Likewise, these are the biggest losers last week. `HTZ` and `LK` are near dead. Cannibis is falling out of favor, thus `TLRY` and `ACB`. Oil's not doing well, thus `UCO`, `USO`.
 
 <p align="center"> 
-<img src="plots/Decr_since_lastwk.png" width="200%">
+<img src="plots/Decr_since_lastwk.png" width="180%">
 </p>
 
 
