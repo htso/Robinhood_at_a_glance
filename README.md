@@ -21,11 +21,11 @@ I show some properties of this dataset and found some issues, see [this](Data_Ex
 
 
 ## Biggest Increase Last Week [Jun 27th, 2020]
-These 10 stocks saw the biggest percent increase in user holdings last week. Even the super big cap like `AMZN` and `AAPL` attracted significant interest in a down week. 
+These 10 stocks saw the biggest percent increase in user holdings last week, where the previous level is at least 100k. Even the super big cap like `AMZN` and `AAPL` attracted significant interest in a down week. 
 
-`PLUG` had M & A news, and RH users reacted to it. `TOPS` had a share placement. `SPCE` has a successful test flight.
+`PLUG` has M & A news, and RH users reacted to it. `TOPS` did a share placement. `SPCE` has a successful test flight.
 
-The surprise is `NIO`, the chinese electric car maker, which has a GS downgrade.
+The surprise is `NIO`, the chinese EV maker, which has a GS downgrade last week.
 
 
 <p align="center"> 
@@ -35,7 +35,7 @@ The surprise is `NIO`, the chinese electric car maker, which has a GS downgrade.
 
 
 ## Biggest Decrease Last Week [Jun 27th, 2020]
-These are the biggest losers last week. `HTZ` and `LK` are near dead. Cannibis is falling out of favor, thus `TLRY` and `ACB`. Oil not doing well, as in `UCO`, `USO`.
+Likewise, these are the biggest losers last week. `HTZ` and `LK` are near dead. Cannibis is falling out of favor, thus `TLRY` and `ACB`. Oil's not doing well, thus `UCO`, `USO`.
 
 <p align="center"> 
 <img src="plots/Decr_since_lastwk.png" width="200%">
