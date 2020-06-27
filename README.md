@@ -20,6 +20,29 @@ I plan to update every weekend with new *robintrack* data. So come back to see w
 I show some properties of this dataset and found some issues, see [this](Data_Exploration.md).
 
 
+## Biggest Increase since Last Week [Jun 27th, 2020]
+These 10 stocks saw the biggest percent increase in user holdings last week. Even the super big cap like `AMZN` and `AAPL` attracted significant interest in a down week. 
+
+`PLUG` had M & A news, and RH users reacted to it. `TOPS` had a share placement. `SPCE` has a successful test flight.
+
+The surprise is `NIO`, the chinese electric car maker, which has a GS downgrade.
+
+
+<p align="center"> 
+<img src="plots/Incr_since_lastwk.png" width="200%">
+</p>
+
+
+
+## Biggest Decrease since Last Week [Jun 27th, 2020]
+These are the biggest losers last week. `HTZ` and `LK` are near dead. Cannibis is falling out of favor, thus `TLRY` and `ACB`. Oil not doing well, as in 'UCO', `USO`.
+
+<p align="center"> 
+<img src="plots/Decr_since_lastwk.png" width="200%">
+</p>
+
+
+
 ## Top 10 Holdings [Jun 27th, 2020]
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the two beaten-up airlines and one cruise operator (`AAL`, `DAL`, `CCL`). But there are also the big tech fans as in `MSFT`  and `AAPL`.
 
@@ -42,17 +65,17 @@ Red line : Robinhood's popularity, or user holding. Blue line : stock price.
 ## Stocks held by at least 100k accounts [Jun 27th, 2020]
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. Interestingly, `QQQ` is not on this list.
 
-`[1] "F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "AAPL" "ACB"  "NCLH" "UAL"  "BA"   "BAC"  "PLUG" "FIT" 
-[17] "SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "RCL"  "UBER" "SAVE" "INO"  "TWTR" "AMD"  "CRON" "BABA" "FB"   "GRPN" "MRNA"
-[33] "ZNGA" "MGM"  "MRO"  "LUV"  "SBUX" "KO"   "APHA" "JBLU" "T"    "TOPS" "GNUS" "MFA"  "OGI"  "USO"  "XOM"  "UCO" 
-[49] "NIO"  "HTZ"  "NKLA" "IVR"  "NFLX" "LK"   "GM"   "AMC"  "SPCE" "NOK"  "VOO"  "NVDA" "CPE"  "CTST" "NRZ"  "PLAY"
-[65] "PENN" "TLRY" "DKNG" "CPRX" "SIRI" "OAS"  "SPY"  "WORK" "NKE"`
+`"F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "AAPL" "ACB"  "NCLH" "UAL"  "BA"   "BAC"  "PLUG" "FIT" 
+"SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "RCL"  "UBER" "SAVE" "INO"  "TWTR" "AMD"  "CRON" "BABA" "FB"   "GRPN" "MRNA"
+"ZNGA" "MGM"  "MRO"  "LUV"  "SBUX" "KO"   "APHA" "JBLU" "T"    "TOPS" "GNUS" "MFA"  "OGI"  "USO"  "XOM"  "UCO" 
+"NIO"  "HTZ"  "NKLA" "IVR"  "NFLX" "LK"   "GM"   "AMC"  "SPCE" "NOK"  "VOO"  "NVDA" "CPE"  "CTST" "NRZ"  "PLAY"
+"PENN" "TLRY" "DKNG" "CPRX" "SIRI" "OAS"  "SPY"  "WORK" "NKE"`
 
 __Changes this week__ : `NKE`
 
 
 
-## Largest % increase since Mar 20
+## Largest % increase since Mar 20 [Not Updated]
 Holdings in these stocks have gone up mutiple times. I use March 20 as the base level for comparison since that's the bottom of this bear market -- so far. 
 
     
@@ -78,7 +101,7 @@ So, we have evidence of one prominent theme on Robinhood : big bets on oil.
 
 
 
-## Largest decrease since Mar 20
+## Largest decrease since Mar 20 [Not Updated]
 Who is falling out of favor? 
 
 To make sure we're not picking up the thinly traded stocks with little interest, the holding on Mar 20 must be at least 10k. 

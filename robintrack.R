@@ -6,16 +6,26 @@ library(quantmod)
 library(gridExtra)
 
 home = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance"
+home1 = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood"
 utils = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/utils"
 plot_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/plots"
-dat_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/robintrack_popularity_export"
-dat_dir = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export_jun27"
-setwd(home)
+# dat_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/robintrack_popularity_export"
+dat_cur = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export_CUR"
+dat_last = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export_LASTWK"
 
+# Get last wk's data for comparison
+setwd(home1)
+load("Robintrack.RData")
+ll.old = ll
+rm(data_env)
+
+# NOTE : call fun.R *after* reading in the old data, never before !
 source(paste(utils, "/Fun.R", sep=""))
 
+
 # Get all CSV file names
-nm = list.files(path=dat_dir, all.files=FALSE, include.dirs=FALSE)
+setwd(home)
+nm = list.files(path=dat_cur, all.files=FALSE, include.dirs=FALSE)
 nm = nm[3:length(nm)]
 (N = length(nm))
 # 8482
@@ -24,9 +34,9 @@ tkr = sapply(strsplit(x=nm, split="\\."), parse_ticker)
 # Check for issues
 sum(is.na(tkr)) # expect 0
 # Read CSV files, convert them to xts objects, save them to the data_env environment
-setwd(dat_dir)
+setwd(dat_cur)
 data_env = new.env()
-res = sapply(nm, read_convert_save2env, data_env=data_env)
+Len = sapply(nm, read_convert_save2env, data_env=data_env)
 # Check : # tickers match # of time series
 length(ls(envir=data_env)) == length(nm) # expect TRUE
 
@@ -62,6 +72,7 @@ table(sapply(ll, function(.s) nrow(.s[["dy_wk"]])))
 # 4. Stocks with holding increased or decreased since Mar 20 ? and by how much in %, show top 5, plots
 # 5. Stocks with holding increased or decreased since Jun 1 ? and by how much in %, show top 5, plots
 # 6. Greatest variability in past three months, show top 5, plots
+# 7. Biggest increase since last week
 
 # 2. Top holdings
 df = as.data.frame(t(sapply(ll, latest_stat, "2020-03-20")))
@@ -76,7 +87,7 @@ colnames(tmp) = c("Ticker", "Mar 20th", "This Week", "% Change")
 tmp[,2] = format(tmp[,2], big.mark=",", digits=0, scientific=FALSE)
 tmp[,3] = format(tmp[,3], big.mark=",", digits=0, scientific=FALSE)
 tmp[,4] = format(tmp[,4], big.mark=",", digits=2, scientific=FALSE)
-png("Top10_table.png", width=480, height=480, bg="white")
+png("Top10_table.png", width=300, height=300, bg="white")
 grid.table(tmp, rows=NULL)
 dev.off()
   
@@ -103,7 +114,7 @@ tmp[,2] = format(tmp[,2], big.mark=",", digits=0, scientific=FALSE)
 tmp[,3] = format(tmp[,3], big.mark=",", digits=0, scientific=FALSE)
 tmp[,4] = format(tmp[,4], big.mark=",", digits=2, scientific=FALSE)
 png("LargestIncr.png", width=480, height = 480, bg="white")
-grid.table(tmp)
+grid.table(tmp, rows=NULL)
 dev.off()
 
 
@@ -126,8 +137,44 @@ df4 = head(df3, 100)
 df4 = df4[order(df4[,"pct_change"], decreasing=TRUE),]
 incr_nm = head(df4, 10)[,"tkr"]
 
-
 # 6. variability over time
+# TO-DO
+
+# 7. biggest change since last week
+df.old = as.data.frame(t(sapply(ll.old, latest_stat, "2020-03-20")))
+df.old[,"tkr"] = as.character(df.old[,"tkr"])
+df.old[,"base_holding"] = as.numeric(df.old[,"base_holding"])
+df.old[,"cur_holding"] = as.numeric(df.old[,"cur_holding"])
+df.old = df.old[order(df.old[,"cur_holding"], decreasing = TRUE),]
+df.comb = merge(df[,1:3], df.old[,1:3], by="tkr", all.x=FALSE, all.y=TRUE, suffixes=c(".cur", ".lastwk"))
+df.comb[,"delta"] = df.comb[,"cur_holding.cur"] - df.comb[,"cur_holding.lastwk"]
+df.comb[,"delta.pct"] = ifelse( df.comb[,"cur_holding.lastwk"] > 0, 100*df.comb[,"delta"] / df.comb[,"cur_holding.lastwk"], NA)
+tmp = df.comb[which(df.comb[,"cur_holding.lastwk"] > 100000),]
+tmp = tmp[order(tmp[,"delta.pct"], decreasing=TRUE),]
+tmp = tmp[,c("tkr", "cur_holding.cur", "cur_holding.lastwk", "delta", "delta.pct")]
+
+incr = head(tmp, 10)
+decr = tail(tmp, 10)
+
+colnames(incr) = c("Ticker", "Current", "Last Week", "Net Change", "% Change")
+incr[,2] = format(incr[,2], big.mark=",", digits=0, scientific=FALSE)
+incr[,3] = format(incr[,3], big.mark=",", digits=0, scientific=FALSE)
+incr[,4] = format(incr[,4], big.mark=",", digits=0, scientific=FALSE)
+incr[,5] = format(incr[,5], big.mark=",", digits=3, scientific=FALSE)
+
+colnames(decr) = c("Ticker", "Current", "Last Week", "Net Change", "% Change")
+decr[,2] = format(decr[,2], big.mark=",", digits=0, scientific=FALSE)
+decr[,3] = format(decr[,3], big.mark=",", digits=0, scientific=FALSE)
+decr[,4] = format(decr[,4], big.mark=",", digits=0, scientific=FALSE)
+decr[,5] = format(decr[,5], big.mark=",", digits=3, scientific=FALSE)
+
+png("Incr_since_lastwk.png", width=480, height=480, bg="white")
+grid.table(incr, rows=NULL)
+dev.off()
+
+png("Decr_since_lastwk.png", width=480, height = 480, bg="white")
+grid.table(decr, rows=NULL)
+dev.off()
 
 
 
@@ -135,10 +182,9 @@ incr_nm = head(df4, 10)[,"tkr"]
 
 
 # Get YF stock prices
-for (s in top_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
-for (s in incr_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
-for (s in decr_nm) getSymbols(s, env=globalenv(), src="yahoo", from="1800-01-01")
-
+sapply(top_nm, function(.k) getSymbols(.k, env=globalenv(), src="yahoo", from="1800-01-01"))
+sapply(incr_nm, function(.k) getSymbols(.k, env=globalenv(), src="yahoo", from="1800-01-01"))
+sapply(decr_nm, function(.k) getSymbols(.k, env=globalenv(), src="yahoo", from="1800-01-01"))
 
 
 # Time Series Plots (one yr)
