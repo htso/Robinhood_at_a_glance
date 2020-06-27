@@ -20,7 +20,7 @@ I plan to update every weekend with new *robintrack* data. So come back to see w
 I show some properties of this dataset and found some issues, see [this](Data_Exploration.md).
 
 
-## Biggest Increase since Last Week [Jun 27th, 2020]
+## Biggest Increase Last Week [Jun 27th, 2020]
 These 10 stocks saw the biggest percent increase in user holdings last week. Even the super big cap like `AMZN` and `AAPL` attracted significant interest in a down week. 
 
 `PLUG` had M & A news, and RH users reacted to it. `TOPS` had a share placement. `SPCE` has a successful test flight.
@@ -34,8 +34,8 @@ The surprise is `NIO`, the chinese electric car maker, which has a GS downgrade.
 
 
 
-## Biggest Decrease since Last Week [Jun 27th, 2020]
-These are the biggest losers last week. `HTZ` and `LK` are near dead. Cannibis is falling out of favor, thus `TLRY` and `ACB`. Oil not doing well, as in 'UCO', `USO`.
+## Biggest Decrease Last Week [Jun 27th, 2020]
+These are the biggest losers last week. `HTZ` and `LK` are near dead. Cannibis is falling out of favor, thus `TLRY` and `ACB`. Oil not doing well, as in `UCO`, `USO`.
 
 <p align="center"> 
 <img src="plots/Decr_since_lastwk.png" width="200%">
