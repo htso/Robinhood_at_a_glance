@@ -23,7 +23,7 @@ These are the favorites of the Robinhood community. Interestingly, seven of the 
 
 
 <p align="center"> 
-<img src="plots/Top10_table.png" width="680" height="680">
+<img src="plots/Top10_table.png" width="1080" height="1080">
 </p>
 
 
