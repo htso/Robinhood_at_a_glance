@@ -22,7 +22,11 @@ I show some properties of this dataset and found some issues, see [this](Data_Ex
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the two beaten-up airlines and one cruise operator (`AAL`, `DAL`, `CCL`). But there are also the big tech fans as in `MSFT`  and `AAPL`.
 
 
-![top_ten](plots/Top10_table.png | width=300 )
+
+<p align="center"> 
+<img src="plots/Top10_table.png" width="400" height="300">
+</p>
+
 
 
 __Changes this week__ : Every stock on this list saw an increase in user holding, except `ACB` and `CCL`. 
