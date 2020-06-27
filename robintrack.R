@@ -168,11 +168,11 @@ decr[,3] = format(decr[,3], big.mark=",", digits=0, scientific=FALSE)
 decr[,4] = format(decr[,4], big.mark=",", digits=0, scientific=FALSE)
 decr[,5] = format(decr[,5], big.mark=",", digits=3, scientific=FALSE)
 
-png("Incr_since_lastwk.png", width=300, height=300, bg="white")
+png("Incr_since_lastwk.png", width=400, height=300, bg="white")
 grid.table(incr, rows=NULL)
 dev.off()
 
-png("Decr_since_lastwk.png", width=300, height=300, bg="white")
+png("Decr_since_lastwk.png", width=400, height=300, bg="white")
 grid.table(decr, rows=NULL)
 dev.off()
 
