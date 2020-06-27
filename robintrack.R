@@ -76,7 +76,7 @@ colnames(tmp) = c("Ticker", "Mar 20th", "This Week", "% Change")
 tmp[,2] = format(tmp[,2], big.mark=",", digits=0, scientific=FALSE)
 tmp[,3] = format(tmp[,3], big.mark=",", digits=0, scientific=FALSE)
 tmp[,4] = format(tmp[,4], big.mark=",", digits=2, scientific=FALSE)
-png("Top10_table.png", width=480, height = 480, bg="white")
+png("Top10_table.png", width=1080, height = 1080, bg="white")
 grid.table(tmp, rows=NULL)
 dev.off()
 
