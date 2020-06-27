@@ -76,7 +76,7 @@ sapply(which(ix.ave), function(.i)ll1[[.i]][["tkr"]])
 [34] "PLCY"  "PQDI"  "QLVD"  "REFA"  "RNDM"  "RNEM"  "ROCH"  "RTR"   "SCNB"  "SCON"  "SFIG" 
 [45] "SPRO"  "SQBG"  "STMB"  "TAL"   "TIG"   "TIVO"  "UBNK"  "VRAY"  "VXX"  
 
-len(sapply(which(ix.med), function(.i)ll1[[.i]][["tkr"]]))
+length(sapply(which(ix.med), function(.i)ll1[[.i]][["tkr"]]))
 [1] "AA"    "ABAX"  "ABCD"  "AFCB"  "AFLG"  "AGC"   "ALZH"  "AMHC"  "ANCX"  "ANDV" 
 [11] "APB"   "API"   "APL"   "APTI"  "ARVR"  "AVHI"  "BBOX"  "BDCX"  "BHAC"  "BHACU"
 [21] "BKAG"  "BKEM"  "BKIE"  "BKMC"  "BKSE"  "BLH"   "BMAY"  "BNKO"  "BNKZ"  "BOJA" 

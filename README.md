@@ -18,27 +18,21 @@ Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not 
 I show some properties of this dataset and found some issues, see [this](Data_Exploration.md).
 
 
-## Top 10 Holdings
+## Top 10 Holdings [Jun 27th, 2020]
 These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the two beaten-up airlines and one cruise operator (`AAL`, `DAL`, `CCL`). But there are also the big tech fans as in `MSFT`  and `AAPL`.
 
 
-| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
-| -----------|--------|---------|---------|------|
-|    F  |  Ford | 514,021  |  904,254 |  76  |
-|   GE  |  General Electric |422,513  |  817,346 | 93  |
-|     AAL |  American Airline  |138,644  |  643,567 | 364 |
-|  DIS  | Disney |352,817  |  605,648 | 72  |
-|  DAL  |   Delta Airline | 118,470  |  594,703 | 402 |
-|  CCL  |  Carnival | 111,887  |  500,496 | 347 |
-| GPRO  | GoPro |357,279  |  487,691 | 36|
-| MSFT  |  Microsoft |367,735  |  474,344 | 29 |
-|    ACB  | Aurora Cannabis |743,858  |  465,437 | -37|
-|   AAPL  |  Apple |292,418  |  438,283 | 49 |
+<p align="center"> 
+<img src="plots/Top10_table.png">
+</p>
+
+
+__Changes this week__ : Every stock on this list saw an increase in user holding, except `ACB` and `CCL`. 
 
 Below I plot the popularity over time against the price since Jun 2019. The key observation here is that a surge in the accounts occured at around the last week of March, or near the market bottom -- sorry I know it's hard to read the date.  
 
 
-![top_ten](plots/Top_10.png)
+![top_ten](plots/Top_10_charts.png)
 
 Red line : Robinhood's popularity, or user holding. Blue line : stock price.
 
@@ -96,14 +90,16 @@ It's not clear there's any pattern here.
 ![largest_decr](plots/Largest_decr.png)   
 
 
-## Stocks held by at least 100k accounts
+## Stocks held by at least 100k accounts [Jun 27th, 2020]
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. Interestingly, `QQQ` is not on this list.
 
-`"F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "ACB"  "AAPL" "NCLH" "UAL"  "BA"   "BAC"  "FIT"
-"PLUG" "SNAP" "TSLA" "HEXO" "CGC"  "AMZN" "RCL"  "SAVE" "UBER" "INO"  "CRON" "TWTR" "AMD"  "BABA" "FB" "GRPN" "MRNA" "ZNGA"
-"MGM"  "MRO"  "SBUX" "LUV"  "APHA" "KO"   "JBLU" "T"    "GNUS" "TOPS" "MFA"  "USO" "OGI"  "XOM"  "UCO"  "HTZ"  "NIO"  "NKLA" "IVR"  "LK"   "NFLX" "GM"   "AMC"  "SPCE" "NOK"  "CPE"  "VOO" "CTST" "NRZ"  "NVDA" "PENN" "PLAY" "TLRY" "CPRX" "DKNG" "OAS"  "SIRI" "WORK" "SPY"` 
+`[1] "F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "AAPL" "ACB"  "NCLH" "UAL"  "BA"   "BAC"  "PLUG" "FIT" 
+[17] "SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "RCL"  "UBER" "SAVE" "INO"  "TWTR" "AMD"  "CRON" "BABA" "FB"   "GRPN" "MRNA"
+[33] "ZNGA" "MGM"  "MRO"  "LUV"  "SBUX" "KO"   "APHA" "JBLU" "T"    "TOPS" "GNUS" "MFA"  "OGI"  "USO"  "XOM"  "UCO" 
+[49] "NIO"  "HTZ"  "NKLA" "IVR"  "NFLX" "LK"   "GM"   "AMC"  "SPCE" "NOK"  "VOO"  "NVDA" "CPE"  "CTST" "NRZ"  "PLAY"
+[65] "PENN" "TLRY" "DKNG" "CPRX" "SIRI" "OAS"  "SPY"  "WORK" "NKE"`
 
-
+__Changes this week__ : `NKE`
 
 -----
  

@@ -1,4 +1,4 @@
-# Exploring the *robintrack* data
+# Exploring the *robintrack* data [Jun 20, 2020]
 
 As of Jun 20, the robintrack data comes in a total of 8,467 csv files, each file corresponds to one stock.
 
@@ -11,11 +11,13 @@ Most of the time series started in May 2018, so they have a little over two year
 <img src="plots/LengthDistrib1.png">
 </p>
 
-There are a few outliers with far more data points than others:
+This is how I interpret this graph, called a histogram by the statistics folks. The peak location tells you majority of the files have length of roughly 18000, i.e. each file has that many rows. There are many files, or stocks, with fewer than 18000. For example, judging by the size of the bars, there are roughly a thousand files with length between 5000 and 10000 rows. And also there are a few outliers with far more data points than others, marked on the far right:
 `EBR.csv GEF.csv HEI.csv HVT.csv LEN.csv MKC.csv PBR.csv STZ.csv WSO.csv`
 
+They are a bit unusual and worth further investigation.
+
 ### Size of Time Steps
-Most of the data are spaced by one hour, i.e. *robintrack* takes a snapshot of the popularity data from Robinhood every 60 minutes. However, this seems to vary from ticker to ticker. Below shows the distribution of percent of 1-hour intervals.
+Most of the data are spaced by one hour, i.e. *robintrack* takes a snapshot of the popularity data from Robinhood every 60 minutes. However, it seems to vary from ticker to ticker. Below shows the distribution of percent of 1-hour intervals.
 
 <p align="center"> 
 <img src="plots/OneHrIntervalDistrib.png">
