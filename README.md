@@ -1,19 +1,22 @@
 # Robinhood at a Glance
 
-This is a preamble to full scale modeling of the Robinhood popularity data using machine learning. Before I do that, I want to 
+This is a preamble to full scale modeling of the Robinhood popularity data using machine learning. Before that, I want to 
 take a glance of the current market as seen in the Robinhood community. Here I use the dataset provided in [*robintrack*](https://robintrack.net), 
-which has user holdings up till Jun 20, 2020. 
+which has the most up-to-date user holdings data. 
 
-[Robinhood](https://robinhood.com) is a discount broker which charges zero commission for stock trading. It has gained almost a cult following in
+[Robinhood](https://robinhood.com) is a discount broker which charges zero commission for stock trading. It has gained wide following in
 recent years, particularly among the millennials. Unlike other brokers, it publishes aggregate data about what stocks its
 users own, and that is the *popularity data* I analyse here. 
 
 For example, in the table below, it shows there are 904,254 stock accounts in Robinhood 
-that owns shares in Ford. However, Robinhood does not publish the exact number of shares each account holds. 
+that owns shares in Ford. Robinhood does not publish the exact number of shares each account holds. 
 
 Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not include it here. To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
 I plan to update every weekend with new *robintrack* data. So come back to see what's changed and what's new.
+
+## Popularity Data
+Robinhood's popularity data tells us the number of users who have a position on a stock. It's not, however, a net number, i.e. it is not the sum of long positions subtracted by the short positions. If two users one holds a long and the other has shorted the stock, the popularity would equal to 2. Therefore, one should not interpret a large popularity value as a reflection of the bullishness on its user base. 
 
 ## Data Exploratory Analysis
 
