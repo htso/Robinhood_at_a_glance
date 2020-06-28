@@ -8,8 +8,7 @@ which has the most up-to-date user holdings data.
 recent years, particularly among the millennials. Unlike other brokers, it publishes aggregate data about what stocks its
 users own, and that is the *popularity data* I analyse here. 
 
-For example, in the table below, it shows there are 904,254 stock accounts in Robinhood 
-that owns shares in Ford. Robinhood does not publish the exact number of shares each account holds. 
+For example, the table below shows 916,933 accounts have a position in Ford. Robinhood does not publish the exact number of shares each account holds. 
 
 Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not include it here. To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
