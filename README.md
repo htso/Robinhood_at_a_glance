@@ -19,6 +19,19 @@ I plan to update every weekend with new *robintrack* data. So come back to see w
 Robinhood's popularity data tells us the number of users who have a position on a stock. It's not, however, a net number, i.e. it is not the sum of long positions subtracted by the short positions. If two users one holds a long and the other has shorted the stock, the popularity would equal to 2. Therefore, one should not interpret a large popularity value as a reflection of the bullishness on its user base. 
 
 
+## Stocks held by at least 100k accounts [Jun 27th, 2020]
+Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
+`"F"    "GE"   "AAL"  "DIS"  "DAL"  "MSFT" "CCL"  "GPRO" "AAPL" "ACB"  "PLUG" "NCLH" "BAC"  "BA"   "UAL"  "FIT" 
+"SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "INO"  "RCL"  "UBER" "FB"   "TWTR" "AMD"  "SAVE" "CRON" "BABA" "GRPN" "ZNGA"
+"MRNA" "KO"   "SBUX" "LUV"  "T"    "MRO"  "MGM"  "TOPS" "APHA" "JBLU" "GNUS" "OGI"  "MFA"  "NIO"  "XOM"  "USO" 
+"UCO"  "HTZ"  "NFLX" "NKLA" "IVR"  "SPCE" "GM"   "AMC"  "LK"   "NOK"  "NVDA" "VOO"  "CTST" "NRZ"  "IDEX" "CPE" 
+"DKNG" "WKHS" "PLAY" "PENN" "CPRX" "TLRY" "SPY"  "SIRI" "OAS"  "NKE"  "WORK"`
+
+
+__New this week__ : `IDEX`, `WKHS`
+
+
+
 
 ## Biggest Increase Last Week [Jul 4th, 2020]
 These 10 stocks saw the biggest percent increase in user holdings last week. 
@@ -54,17 +67,6 @@ These are the favorites of the Robinhood community.
 
 Red line : Robinhood's popularity, or user holding. Blue line : stock price.
 
-
-## Stocks held by at least 100k accounts [Jun 27th, 2020]
-Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
-`"F"    "GE"   "AAL"  "DIS"  "DAL"  "MSFT" "CCL"  "GPRO" "AAPL" "ACB"  "PLUG" "NCLH" "BAC"  "BA"   "UAL"  "FIT" 
-"SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "INO"  "RCL"  "UBER" "FB"   "TWTR" "AMD"  "SAVE" "CRON" "BABA" "GRPN" "ZNGA"
-"MRNA" "KO"   "SBUX" "LUV"  "T"    "MRO"  "MGM"  "TOPS" "APHA" "JBLU" "GNUS" "OGI"  "MFA"  "NIO"  "XOM"  "USO" 
-"UCO"  "HTZ"  "NFLX" "NKLA" "IVR"  "SPCE" "GM"   "AMC"  "LK"   "NOK"  "NVDA" "VOO"  "CTST" "NRZ"  "IDEX" "CPE" 
-"DKNG" "WKHS" "PLAY" "PENN" "CPRX" "TLRY" "SPY"  "SIRI" "OAS"  "NKE"  "WORK"`
-
-
-__New this week__ : `IDEX`, `WKHS`
 
 
 
