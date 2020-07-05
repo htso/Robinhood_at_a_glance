@@ -1,4 +1,5 @@
 # Robinhood at a Glance
+### -- July 5, 2020
 
 This is a preamble to full scale modeling of the Robinhood popularity data using machine learning. Before that, I want to 
 take a glance of the current market as seen in the Robinhood community. Here I use the dataset provided in [*robintrack*](https://robintrack.net), 
@@ -17,17 +18,10 @@ I plan to update every weekend with new *robintrack* data. So come back to see w
 ## Popularity Data
 Robinhood's popularity data tells us the number of users who have a position on a stock. It's not, however, a net number, i.e. it is not the sum of long positions subtracted by the short positions. If two users one holds a long and the other has shorted the stock, the popularity would equal to 2. Therefore, one should not interpret a large popularity value as a reflection of the bullishness on its user base. 
 
-## Data Exploratory Analysis
-
-I show some properties of this dataset and found some issues, see [this](Data_Exploration.md).
 
 
-## Biggest Increase Last Week [Jun 27th, 2020]
-These 10 stocks saw the biggest percent increase in user holdings last week, where the previous level is at least 100k. Even the super big cap like `AMZN` and `AAPL` attracted significant interest in a down week. 
-
-`PLUG` has M & A news, and RH users reacted to it. `TOPS` did a share placement. `SPCE` has a successful test flight.
-
-The surprise is `NIO`, the chinese EV maker, which has a GS downgrade last week.
+## Biggest Increase Last Week [Jul 4th, 2020]
+These 10 stocks saw the biggest percent increase in user holdings last week. 
 
 
 <p align="left"> 
@@ -36,8 +30,8 @@ The surprise is `NIO`, the chinese EV maker, which has a GS downgrade last week.
 
 
 
-## Biggest Decrease Last Week [Jun 27th, 2020]
-Likewise, these are the biggest losers last week. `HTZ` and `LK` are near dead. Cannibis is falling out of favor, thus `TLRY` and `ACB`. Oil's not doing well, thus `UCO`, `USO`.
+## Biggest Decrease Last Week [Jul 4th, 2020]
+Likewise, these are the biggest losers last week.
 
 <p align="center"> 
 <img src="plots/Decr_since_lastwk.png" width="100%">
@@ -45,8 +39,8 @@ Likewise, these are the biggest losers last week. `HTZ` and `LK` are near dead. 
 
 
 
-## Top 10 Holdings [Jun 27th, 2020]
-These are the favorites of the Robinhood community. Interestingly, seven of the 10 happen to be old fashion non-technology names. An automaker makes it to the top of the list is puzzling. They surely have many bottom-fishers, thus the large interest in the two beaten-up airlines and one cruise operator (`AAL`, `DAL`, `CCL`). But there are also the big tech fans as in `MSFT`  and `AAPL`.
+## Top 10 Holdings [Jul 4th, 2020]
+These are the favorites of the Robinhood community. 
 
 
 <p align="center"> 
@@ -65,15 +59,15 @@ Red line : Robinhood's popularity, or user holding. Blue line : stock price.
 
 
 ## Stocks held by at least 100k accounts [Jun 27th, 2020]
-Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. Interestingly, `QQQ` is not on this list.
+Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
+`"F"    "GE"   "AAL"  "DIS"  "DAL"  "MSFT" "CCL"  "GPRO" "AAPL" "ACB"  "PLUG" "NCLH" "BAC"  "BA"   "UAL"  "FIT" 
+"SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "INO"  "RCL"  "UBER" "FB"   "TWTR" "AMD"  "SAVE" "CRON" "BABA" "GRPN" "ZNGA"
+"MRNA" "KO"   "SBUX" "LUV"  "T"    "MRO"  "MGM"  "TOPS" "APHA" "JBLU" "GNUS" "OGI"  "MFA"  "NIO"  "XOM"  "USO" 
+"UCO"  "HTZ"  "NFLX" "NKLA" "IVR"  "SPCE" "GM"   "AMC"  "LK"   "NOK"  "NVDA" "VOO"  "CTST" "NRZ"  "IDEX" "CPE" 
+"DKNG" "WKHS" "PLAY" "PENN" "CPRX" "TLRY" "SPY"  "SIRI" "OAS"  "NKE"  "WORK"`
 
-`"F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "AAPL" "ACB"  "NCLH" "UAL"  "BA"   "BAC"  "PLUG" "FIT" 
-"SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "RCL"  "UBER" "SAVE" "INO"  "TWTR" "AMD"  "CRON" "BABA" "FB"   "GRPN" "MRNA"
-"ZNGA" "MGM"  "MRO"  "LUV"  "SBUX" "KO"   "APHA" "JBLU" "T"    "TOPS" "GNUS" "MFA"  "OGI"  "USO"  "XOM"  "UCO" 
-"NIO"  "HTZ"  "NKLA" "IVR"  "NFLX" "LK"   "GM"   "AMC"  "SPCE" "NOK"  "VOO"  "NVDA" "CPE"  "CTST" "NRZ"  "PLAY"
-"PENN" "TLRY" "DKNG" "CPRX" "SIRI" "OAS"  "SPY"  "WORK" "NKE"`
 
-__Changes this week__ : `NKE`
+__New this week__ : `IDEX`, `WKHS`
 
 
 
@@ -81,7 +75,7 @@ __Changes this week__ : `NKE`
 Holdings in these stocks have gone up mutiple times. I use March 20 as the base level for comparison since that's the bottom of this bear market -- so far. 
 
     
-| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
+| Ticker    |  Company Name   | Mar 20 | Jun 20 | Change % |
 | -----------|--------|---------|---------|------|
 |  IVR   | Invesco Mortgage|  1,323  |  144,370 |  10,812|
 | GNUS   | Genius Brands |  3,532 |   190,193  | 5,284 |
@@ -108,7 +102,7 @@ Who is falling out of favor?
 
 To make sure we're not picking up the thinly traded stocks with little interest, the holding on Mar 20 must be at least 10k. 
 
-| Ticker    |  Company Name   | Mar 20 Holdings | Current Holdings | Change % |
+| Ticker    |  Company Name   | Mar 20 | Jun 20 | Change % |
 | -----------|--------|---------|---------|------|
 |  ACB  |Aurora Cannabis|     743858 |   465437 | -37|
 |  APRN  |Blue Apron|      13838 |     9159 | -33|
@@ -127,6 +121,10 @@ It's not clear there's any pattern here.
 
 ![largest_decr](plots/Largest_decr.png)   
 
+
+## Data Exploratory Analysis
+
+I show some properties of this dataset and found some issues, see [this](Data_Exploration.md).
 
 
 -----

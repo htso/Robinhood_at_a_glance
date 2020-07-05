@@ -5,6 +5,7 @@
 library(quantmod)
 
 home = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance"
+home = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood"
 utils = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/utils"
 plot_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/plots"
 dat_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/robintrack_popularity_export"

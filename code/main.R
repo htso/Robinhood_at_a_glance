@@ -5,17 +5,17 @@
 library(quantmod)
 library(gridExtra)
 
-home = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance"
+setwd("../")
+home = getwd()
 home1 = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood"
-utils = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/utils"
-plot_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/plots"
-# dat_dir = "/mnt/WanChai/Dropbox/GITHUB_REPO/Robinhood_at_a_glance/robintrack_popularity_export"
-dat_cur = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export_CUR"
-dat_last = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export_LASTWK"
+utils = paste(home, "/utils", sep="")
+plot_dir = paste(home, "/plots", sep="")
+dat_cur = paste(home, "/popularity_export", sep="")
+dat_cur1 = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export"
+dat_lastwk = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export_LASTWK"
 
 # Get last wk's data for comparison
-setwd(home1)
-load("Robintrack.RData")
+load(paste(home1, "/Robintrack_Jun27.RData", sep=""))
 ll.old = ll
 rm(data_env)
 
@@ -24,27 +24,20 @@ source(paste(utils, "/Fun.R", sep=""))
 
 
 # Get all CSV file names
-setwd(home)
-nm = list.files(path=dat_cur, all.files=FALSE, include.dirs=FALSE)
+nm = list.files(path=dat_cur1, all.files=FALSE, include.dirs=FALSE)
 nm = nm[3:length(nm)]
 (N = length(nm))
-# 8482
+# 8508
 # Build vector of ticker symbols 
 tkr = sapply(strsplit(x=nm, split="\\."), parse_ticker)
 # Check for issues
 sum(is.na(tkr)) # expect 0
 # Read CSV files, convert them to xts objects, save them to the data_env environment
-setwd(dat_cur)
+setwd(dat_cur1)
 data_env = new.env()
 Len = sapply(nm, read_convert_save2env, data_env=data_env)
 # Check : # tickers match # of time series
 length(ls(envir=data_env)) == length(nm) # expect TRUE
-
-
-# Which tickers have seen user holding falling to zero from at least 10k in Feb ?
-
-
-# Which tickers have been holding steadily rising ?
 
 
 
@@ -54,12 +47,12 @@ setwd(home)
 ll = sweep_env(data_env, day_wk_aggregator)
 # Check + statistics on each ticker dataset
 cnt = table(sapply(ll, function(.s) nrow(.s[["y_daily"]])))
-sum(cnt[which(as.integer(names(cnt)) > 365)]) / len(tkr)
+sum(cnt[which(as.integer(names(cnt)) > 365)]) / length(tkr)
 # [1] 0.8450455
 # ==> 84% of the tickers have more than 1 yr of data
 table(sapply(ll, function(.s) nrow(.s[["dy_daily"]])))
 cnt = table(sapply(ll, function(.s) nrow(.s[["y_wk"]])))
-sum(cnt[which(as.integer(names(cnt)) > 52)]) / len(tkr)
+sum(cnt[which(as.integer(names(cnt)) > 52)]) / length(tkr)
 # [1] 0.8488
 # ==> 84% of the tickers have more than 52 wks of data
 table(sapply(ll, function(.s) nrow(.s[["dy_wk"]])))
@@ -73,6 +66,11 @@ table(sapply(ll, function(.s) nrow(.s[["dy_wk"]])))
 # 5. Stocks with holding increased or decreased since Jun 1 ? and by how much in %, show top 5, plots
 # 6. Greatest variability in past three months, show top 5, plots
 # 7. Biggest increase since last week
+# TO-DO : Which tickers have seen user holding falling to zero from at least 10k in Feb ?
+# TO-DO : Which tickers have seen holding steadily rising ?
+# ...
+# ...
+
 
 # 2. Top holdings
 df = as.data.frame(t(sapply(ll, latest_stat, "2020-03-20")))
@@ -95,11 +93,12 @@ dev.off()
 
 # 3. stocks with more than 100k accounts
 df[which(df[,"cur_holding"] > 100000), "tkr"]
-[1] "F"    "GE"   "AAL"  "DIS"  "DAL"  "CCL"  "GPRO" "MSFT" "AAPL" "ACB"  "NCLH" "UAL"  "BA"   "BAC"  "PLUG" "FIT" 
-[17] "SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "RCL"  "UBER" "SAVE" "INO"  "TWTR" "AMD"  "CRON" "BABA" "FB"   "GRPN" "MRNA"
-[33] "ZNGA" "MGM"  "MRO"  "LUV"  "SBUX" "KO"   "APHA" "JBLU" "T"    "TOPS" "GNUS" "MFA"  "OGI"  "USO"  "XOM"  "UCO" 
-[49] "NIO"  "HTZ"  "NKLA" "IVR"  "NFLX" "LK"   "GM"   "AMC"  "SPCE" "NOK"  "VOO"  "NVDA" "CPE"  "CTST" "NRZ"  "PLAY"
-[65] "PENN" "TLRY" "DKNG" "CPRX" "SIRI" "OAS"  "SPY"  "WORK" "NKE" 
+[1] "F"    "GE"   "AAL"  "DIS"  "DAL"  "MSFT" "CCL"  "GPRO" "AAPL" "ACB"  "PLUG" "NCLH" "BAC"  "BA"   "UAL"  "FIT" 
+[17] "SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "INO"  "RCL"  "UBER" "FB"   "TWTR" "AMD"  "SAVE" "CRON" "BABA" "GRPN" "ZNGA"
+[33] "MRNA" "KO"   "SBUX" "LUV"  "T"    "MRO"  "MGM"  "TOPS" "APHA" "JBLU" "GNUS" "OGI"  "MFA"  "NIO"  "XOM"  "USO" 
+[49] "UCO"  "HTZ"  "NFLX" "NKLA" "IVR"  "SPCE" "GM"   "AMC"  "LK"   "NOK"  "NVDA" "VOO"  "CTST" "NRZ"  "IDEX" "CPE" 
+[65] "DKNG" "WKHS" "PLAY" "PENN" "CPRX" "TLRY" "SPY"  "SIRI" "OAS"  "NKE"  "WORK"
+
 
 
 # 4. largest percentage increase since Mar 20
