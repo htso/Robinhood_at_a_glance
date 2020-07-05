@@ -48,9 +48,6 @@ These are the favorites of the Robinhood community.
 </p>
 
 
-__Changes this week__ : Every stock on this list saw an increase in user holding, except `ACB` and `CCL`. 
-
-Below I plot the popularity over time against the price since Jun 2019. The key observation here is that a surge in the accounts occured at around the last week of March, or near the market bottom -- sorry it's hard to see the dates.  
 
 
 ![top_ten](plots/Top_10_charts.png)
