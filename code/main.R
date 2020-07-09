@@ -100,7 +100,6 @@ df[which(df[,"cur_holding"] > 100000), "tkr"]
 [65] "DKNG" "WKHS" "PLAY" "PENN" "CPRX" "TLRY" "SPY"  "SIRI" "OAS"  "NKE"  "WORK"
 
 
-
 # 4. largest percentage increase since Mar 20
 df1 = head(df, 100)
 df1 = df1[order(df1[,"pct_change"], decreasing=TRUE),]

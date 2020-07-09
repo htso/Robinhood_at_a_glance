@@ -16,7 +16,11 @@ Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not 
 I plan to update every weekend with new *robintrack* data. So come back to see what's changed and what's new.
 
 ## Popularity Data
-Robinhood's popularity data tells us the number of users who have a position on a stock. It's not, however, a net number, i.e. it is not the sum of long positions subtracted by the short positions. If two users one holds a long and the other has shorted the stock, the popularity would equal to 2. Therefore, one should not interpret a large popularity value as a reflection of the bullishness on its user base. 
+Robinhood's popularity data tells us the number of users who hold a position in a stock. It is not, however, a net number, i.e. it is not the sum of longs minus shorts. If there are two users, for example, user 1 longs 1 share, and user 2 shorts 1 share, the popularity is not 0, but 2. While it may be true that most RH traders have a long bias, one should'nt read a large popularity as a sentiment of bullishness. 
+
+Another aspect to keep in mind is that popularity doesn't equate to exposure. A large number of RH users may only control a small number of shares in total, so that the total exposure in the RH community is actually small for a large popularity value. At the other extreme, a small number of users may own a large number of shares. In that case, the popularity would be small while the overall exposure is huge. 
+
+Thus, there is no direct and necessary relationship between popularity and sentiment on a stock. In fact, the usefulness of this particular data point is to be evaluated and determined by a suitable ML model. On some stocks, a large popularity may be a good predictor of future return while it may have little value on others. 
 
 
 ## Stocks held by at least 100k accounts [Jun 27th, 2020]
