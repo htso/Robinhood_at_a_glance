@@ -1,6 +1,8 @@
 # Robinhood at a Glance
 ### -- July 5, 2020
 
+See [this chart](https://charts4github.imfast.io/interactive-plots.html)
+
 This is a preamble to full scale modeling of the Robinhood popularity data using machine learning. Before that, I want to 
 take a glance of the current market as seen in the Robinhood community. Here I use the dataset provided in [*robintrack*](https://robintrack.net), 
 which has the most up-to-date user holdings data. 
