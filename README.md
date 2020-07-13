@@ -38,6 +38,10 @@ These 10 stocks saw the biggest percent increase in user holdings last week.
 <img src="plots/Incr_since_lastwk.png" width="100%">
 </p>
 
+<p align="left"> 
+<img src="plots/Plot_incr_since_lastwk.png" width="100%">
+</p>
+
 
 
 ## Biggest Decrease Last Week [Jul 12th, 2020]
