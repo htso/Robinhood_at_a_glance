@@ -21,11 +21,11 @@ Thus, there is no direct and necessary relationship between popularity and senti
 
 ## Stocks held by at least 100k accounts [July 12th, 2020]
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
-"F"    "GE"   "AAL"  "DIS"  "DAL"  "AAPL" "MSFT" "CCL"  "GPRO" "ACB"  "TSLA" "PLUG" "NCLH" "AMZN" "BAC" 
+`"F"    "GE"   "AAL"  "DIS"  "DAL"  "AAPL" "MSFT" "CCL"  "GPRO" "ACB"  "TSLA" "PLUG" "NCLH" "AMZN" "BAC" 
 "SNAP" "BA"   "FIT"  "UAL"  "NIO"  "UBER" "HEXO" "CGC"  "BABA" "RCL"  "FB"   "TWTR" "INO"  "AMD"  "CRON"
 "SAVE" "ZNGA" "KO"   "MRNA" "T"    "TOPS" "SBUX" "LUV"  "APHA" "MRO"  "GNUS" "JBLU" "MGM"  "OGI"  "NFLX"
 "MFA"  "XOM"  "USO"  "UCO"  "HTZ"  "IVR"  "SPCE" "AMC"  "NVDA" "GM"   "WKHS" "NOK"  "VOO"  "NRZ"  "CPE" 
-"PLAY" "PFE"  "PENN" "CPRX" "SQ"   "SPY"  "TLRY" "SIRI" "NKE"  "WORK" "IDEX" "VSLR"
+"PLAY" "PFE"  "PENN" "CPRX" "SQ"   "SPY"  "TLRY" "SIRI" "NKE"  "WORK" "IDEX" "VSLR"`
 
 
 
