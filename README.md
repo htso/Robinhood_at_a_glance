@@ -1,17 +1,11 @@
 # Robinhood at a Glance
-### -- July 5, 2020
-
-See [this chart](https://charts4github.imfast.io/interactive-plots.html)
+### -- July 12, 2020
 
 This is a preamble to full scale modeling of the Robinhood popularity data using machine learning. Before that, I want to 
 take a glance of the current market as seen in the Robinhood community. Here I use the dataset provided in [*robintrack*](https://robintrack.net), 
 which has the most up-to-date user holdings data. 
 
-[Robinhood](https://robinhood.com) is a discount broker which charges zero commission for stock trading. It has gained wide following in
-recent years, particularly among the millennials. Unlike other brokers, it publishes aggregate data about what stocks its
-users own, and that is the *popularity data* I analyse here. 
-
-For example, the table below shows 916,933 accounts have a position in Ford. Robinhood does not publish the exact number of shares each account holds. 
+[Robinhood](https://robinhood.com) is a discount broker which charges zero commission for stock trading. It has gained wide following in recent years, particularly among the millennials. Unlike other brokers, it publishes aggregate data about what stocks its users own, which is called a stock's *popularity*. 
 
 Since the dataset is quite large (3.3 Gb) and belongs to *robintrack*, I do not include it here. To run my scripts, you need to download it from his site -- see __Data Sources__ below.
 
@@ -25,21 +19,18 @@ Another aspect to keep in mind is that popularity doesn't equate to exposure. A 
 Thus, there is no direct and necessary relationship between popularity and sentiment on a stock. In fact, the usefulness of this particular data point is to be evaluated and determined by a suitable ML model. On some stocks, a large popularity may be a good predictor of future return while it may have little value on others. 
 
 
-## Stocks held by at least 100k accounts [Jun 27th, 2020]
+## Stocks held by at least 100k accounts [July 12th, 2020]
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
-`"F"    "GE"   "AAL"  "DIS"  "DAL"  "MSFT" "CCL"  "GPRO" "AAPL" "ACB"  "PLUG" "NCLH" "BAC"  "BA"   "UAL"  "FIT" 
-"SNAP" "TSLA" "AMZN" "HEXO" "CGC"  "INO"  "RCL"  "UBER" "FB"   "TWTR" "AMD"  "SAVE" "CRON" "BABA" "GRPN" "ZNGA"
-"MRNA" "KO"   "SBUX" "LUV"  "T"    "MRO"  "MGM"  "TOPS" "APHA" "JBLU" "GNUS" "OGI"  "MFA"  "NIO"  "XOM"  "USO" 
-"UCO"  "HTZ"  "NFLX" "NKLA" "IVR"  "SPCE" "GM"   "AMC"  "LK"   "NOK"  "NVDA" "VOO"  "CTST" "NRZ"  "IDEX" "CPE" 
-"DKNG" "WKHS" "PLAY" "PENN" "CPRX" "TLRY" "SPY"  "SIRI" "OAS"  "NKE"  "WORK"`
-
-
-__New this week__ : `IDEX`, `WKHS`
+"F"    "GE"   "AAL"  "DIS"  "DAL"  "AAPL" "MSFT" "CCL"  "GPRO" "ACB"  "TSLA" "PLUG" "NCLH" "AMZN" "BAC" 
+"SNAP" "BA"   "FIT"  "UAL"  "NIO"  "UBER" "HEXO" "CGC"  "BABA" "RCL"  "FB"   "TWTR" "INO"  "AMD"  "CRON"
+"SAVE" "ZNGA" "KO"   "MRNA" "T"    "TOPS" "SBUX" "LUV"  "APHA" "MRO"  "GNUS" "JBLU" "MGM"  "OGI"  "NFLX"
+"MFA"  "XOM"  "USO"  "UCO"  "HTZ"  "IVR"  "SPCE" "AMC"  "NVDA" "GM"   "WKHS" "NOK"  "VOO"  "NRZ"  "CPE" 
+"PLAY" "PFE"  "PENN" "CPRX" "SQ"   "SPY"  "TLRY" "SIRI" "NKE"  "WORK" "IDEX" "VSLR"
 
 
 
 
-## Biggest Increase Last Week [Jul 4th, 2020]
+## Biggest Increase Last Week [Jul 12th, 2020]
 These 10 stocks saw the biggest percent increase in user holdings last week. 
 
 
@@ -49,7 +40,7 @@ These 10 stocks saw the biggest percent increase in user holdings last week.
 
 
 
-## Biggest Decrease Last Week [Jul 4th, 2020]
+## Biggest Decrease Last Week [Jul 12th, 2020]
 Likewise, these are the biggest losers last week.
 
 <p align="center"> 
@@ -58,7 +49,7 @@ Likewise, these are the biggest losers last week.
 
 
 
-## Top 10 Holdings [Jul 4th, 2020]
+## Top 10 Holdings [Jul 12th, 2020]
 These are the favorites of the Robinhood community. 
 
 
@@ -68,63 +59,18 @@ These are the favorites of the Robinhood community.
 
 
 
-
-![top_ten](plots/Top_10_charts.png)
-
-Red line : Robinhood's popularity, or user holding. Blue line : stock price.
+![top_ten](plots/Plot_Top_10.png)
 
 
 
 
-## Largest % increase since Mar 20 [Not Updated]
+## Largest % increase since Mar 20 [Jul 12th, 2020]
 Holdings in these stocks have gone up mutiple times. I use March 20 as the base level for comparison since that's the bottom of this bear market -- so far. 
 
-    
-| Ticker    |  Company Name   | Mar 20 | Jun 20 | Change % |
-| -----------|--------|---------|---------|------|
-|  IVR   | Invesco Mortgage|  1,323  |  144,370 |  10,812|
-| GNUS   | Genius Brands |  3,532 |   190,193  | 5,284 |
-| SHIP  |Seanergy Maritime|   1,757  |   78,600 |  4,373|
-|  UCO  |ProShares Ultra Crude Oil|  3,955  |  164,385 |  4,056|
-|  HTZ   | Hertz|  4,970 |   163,226|  3,184|
-| MFA   | MFA Financial | 5,614 |  180,614 | 3,117 |
-| XSPA  |XpresSpa |   2,849  |   90,944 |  3,092|
-| TOPS  | Top Ships  |    7,537 |   180,647 | 2,297 |
-| VTIQ[3]  | VectoIQ (Nikola)  |       5,110  |   86,881 | 1,600 |
-| USO  | U.S. Oil Fund  |   19,737  |  175,211 |  788 |
+<p align="left"> 
+<img src="plots/LargestIncr_since_Mar20.png" width="100%">
+</p>
 
-
-`IVR` is a mortgage REIT that almost went bankrupt.  `GNUS` is a stay-at-home stock, which caters to family with kids locked up at home.  Hertz is a travel stock that just went bankrupt, has been all over the news. `XSPA` provides spa services at airports, so it's in same category as airlines. The two oil ETFs (`USO`, `UCO`) and the two tanker stocks (`TOPS`, `SHIP`) are obvious bets on oil rebound. VTIQ, which has merged and become Nikola, is an outlier.
-
-So, we have evidence of one prominent theme on Robinhood : big bets on oil.
-
-![largest_incr](plots/Largest_incr.png)
-
-
-
-## Largest decrease since Mar 20 [Not Updated]
-Who is falling out of favor? 
-
-To make sure we're not picking up the thinly traded stocks with little interest, the holding on Mar 20 must be at least 10k. 
-
-| Ticker    |  Company Name   | Mar 20 | Jun 20 | Change % |
-| -----------|--------|---------|---------|------|
-|  ACB  |Aurora Cannabis|     743858 |   465437 | -37|
-|  APRN  |Blue Apron|      13838 |     9159 | -33|
-| WTRH   |Waitr Holdings|     20028  |   14435 | -28|
-|  OPK   |OPKO Health|     44611  |   32637 | -27|
-| UVXY   |ProShares Ultra VIX Futures |     14938  |   11209 | -25|
-| CODX   |Co-Diagnostics|     32054  |   25410 | -21|
-| CORV   |Correvio Pharma|     10290  |    8432 | -18|
-| IRBT   |iRobot |     10296  |    8617 | -16|
-| GUSH   |Direxion Oil Gas Bull 2X |     30439  |   27219 | -10|
-| APT    |Alpha Pro Tech|    11203   |  10136 | -9.5|
-
-These names are being shunned by the Robinhood community. Since Robinhood has been growing rapidly with hundreds of thousands of accounts added every month, these stocks have seen a drop in total holding, meaning not only new investors avoided them, existing accounts have closed out previous positions.
-
-It's not clear there's any pattern here.
-
-![largest_decr](plots/Largest_decr.png)   
 
 
 ## Data Exploratory Analysis
