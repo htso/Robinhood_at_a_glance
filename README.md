@@ -114,8 +114,6 @@ References
 
 [2] https://finance.yahoo.com/
 
-[3] VectoIQ has merged with Nikola and ceased to trade on NASDAQ. 
-
 -----
 
 The information in this repository is provided for information purposes only. It is not intended to be and does not
