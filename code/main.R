@@ -4,17 +4,18 @@
 
 library(quantmod)
 library(gridExtra)
+library(tidyverse)
 
 datetm = Sys.time()
 today = as.Date(datetm)
 
 private_dir = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood"
-dat_private = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export"
-dat_lastwk = "/mnt/WanChai/Dropbox/AlgoTrading/Robinhood/popularity_export_LASTWK"
+dat_private = "/mnt/ClearWaterBay/popularity_export"
+dat_lastwk = "/mnt/ClearWaterBay/popularity_export_LASTWK"
 # Get last wk's data for comparison
 #load(paste(private_dir, "/Robintrack_Jul5.RData", sep=""))
 #ll.old = ll
-#rm(data_env, df, df1, df2, df.comb, N, top_nm, tkr, tmp)
+rm(data_env, df, df1, df2, df.comb, N, top_nm, tkr, tmp)
 
 setwd("../")
 home = getwd()
@@ -27,9 +28,9 @@ source(paste(utils, "/Fun.R", sep=""))
 
 # Get all CSV file names
 nm = list.files(path=dat_private, all.files=FALSE, include.dirs=FALSE)
-nm = nm[3:length(nm)]
+nm = nm[3:length(nm)] # bug
 (N = length(nm))
-# 8519
+# 4310
 # Build vector of ticker symbols 
 tkr = sapply(strsplit(x=nm, split="\\."), parse_ticker)
 # Check for issues
@@ -68,7 +69,7 @@ table(sapply(ll, function(.s) nrow(.s[["dy_wk"]])))
 # 7. Biggest increase since last week
 # TO-DO : Which tickers have seen user holding falling to zero from at least 10k in Feb ?
 # TO-DO : Which tickers have seen holding steadily rising ?
-# ...
+# 8. Estimate RH's total account position time series
 # ...
 
 
@@ -90,6 +91,15 @@ dev.off()
   
 # 3. stocks with more than 100k accounts
 df[which(df[,"laterT"] > 100000), "tkr"]
+"F"    "GE"   "AAL"  "DIS"  "DAL"  "AAPL" "MSFT" "CCL"  "GPRO" "TSLA" "ACB" 
+"PLUG" "AMZN" "NCLH" "BAC"  "SNAP" "FIT"  "BA"   "UAL"  "MRNA" "NIO"  "HEXO"
+"UBER" "BABA" "CGC"  "FB"   "RCL"  "TWTR" "AMD"  "CRON" "INO"  "ZNGA" "NFLX"
+"SAVE" "KO"   "T"    "TOPS" "SBUX" "APHA" "LUV"  "MRO"  "JBLU" "MGM"  "GNUS"
+"OGI"  "XOM"  "MFA"  "USO"  "SPCE" "UCO"  "HTZ"  "IVR"  "NVDA" "AMC"  "GM"  
+"WKHS" "NOK"  "VOO"  "PFE"  "NRZ"  "SQ"   "PLAY" "CPRX" "SPY"  "CPE"  "WORK"
+"SIRI" "TLRY" "PENN" "NKE"  "VSLR"
+
+
 "F"    "GE"   "AAL"  "DIS"  "DAL"  "AAPL" "MSFT" "CCL"  "GPRO" "ACB"  "TSLA" "PLUG" "NCLH" "AMZN" "BAC" 
 "SNAP" "BA"   "FIT"  "UAL"  "NIO"  "UBER" "HEXO" "CGC"  "BABA" "RCL"  "FB"   "TWTR" "INO"  "AMD"  "CRON"
 "SAVE" "ZNGA" "KO"   "MRNA" "T"    "TOPS" "SBUX" "LUV"  "APHA" "MRO"  "GNUS" "JBLU" "MGM"  "OGI"  "NFLX"
@@ -133,12 +143,33 @@ colnames(incr) = c("Name", "Ticker", "Last Week", "Today", "% Change")
 incr[,3] = format(incr[,3], big.mark=",", digits=0, scientific=FALSE)
 incr[,4] = format(incr[,4], big.mark=",", digits=0, scientific=FALSE)
 incr[,5] = format(incr[,5], big.mark=",", digits=0, scientific=FALSE)
+incr[1,"Name"] = ""
+incr[2,"Name"] = ""
+incr[3,"Name"] = ""
+incr[4,"Name"] = ""
+incr[5,"Name"] = ""
+incr[6,"Name"] = ""
+incr[7,"Name"] = ""
+incr[8,"Name"] = ""
+incr[9,"Name"] = ""
+incr[10,"Name"] = ""
 
 decr = cbind(Name=NA, decr)
 colnames(decr) = c("Name", "Ticker", "Last Week", "Today", "% Change")
 decr[,3] = format(decr[,3], big.mark=",", digits=0, scientific=FALSE)
 decr[,4] = format(decr[,4], big.mark=",", digits=0, scientific=FALSE)
 decr[,5] = format(decr[,5], big.mark=",", digits=0, scientific=FALSE)
+decr[1,"Name"] = "Digital Ally"
+decr[2,"Name"] = "Wynn Resorts"
+decr[3,"Name"] = "Ideanomics"
+decr[4,"Name"] = "Seanergy Maritime"
+decr[5,"Name"] = "Globalstar"
+decr[6,"Name"] = "Urban One D"
+decr[7,"Name"] = "Kitov Pharma"
+decr[8,"Name"] = "Urban One A"
+decr[9,"Name"] = "Bed Bath Beyond"
+decr[10,"Name"] = "Electrameccanica"
+
 
 png("Incr_since_lastwk.png", width=400, height=300, bg="white")
 grid.table(incr, rows=NULL)
@@ -147,6 +178,33 @@ dev.off()
 png("Decr_since_lastwk.png", width=400, height=300, bg="white")
 grid.table(decr, rows=NULL)
 dev.off()
+
+# 8. Estimate total account position
+df = data.frame(date=seq(from=as.Date("2019-05-01"), to=as.Date("2020-07-11"), by="day"))
+for ( i in 1:length(ll) ) {
+  xt = ll[[i]]$y_daily
+  tk = colnames(xt)[1]
+  dff = data.frame(date=as.Date(index(xt)), xt=as.numeric(xt[,1]))
+  df = merge(df, dff, by="date", all.x=TRUE, all.y=TRUE)
+  colnames(df)[i+1] = tk
+}
+total_pos = apply(df[,-1], 1, sum, na.rm=TRUE) / 1e6
+X11();plot(df[,"date"], total_pos, type="l", xlab="date", ylab="Total Position (million)")
+df1 = cbind(date=df[,"date"], df[,-1]/(1e6*total_pos))
+
+X11();par(mfrow=c(3,3), mar=c(2,2,2,2))
+plot(df1[,"date"], df1[,"TSLA"], type="l", xlab="", ylab="% of total", main="TSLA")
+plot(df1[,"date"], df1[,"AMZN"], type="l", xlab="", ylab="% of total", main="AMZN")
+plot(df1[,"date"], df1[,"AAPL"], type="l", xlab="", ylab="% of total", main="AAPL")
+plot(df1[,"date"], df1[,"MSFT"], type="l", xlab="", ylab="% of total", main="MSFT")
+plot(df1[,"date"], df1[,"FB"], type="l", xlab="", ylab="% of total", main="FB")
+plot(df1[,"date"], df1[,"GOOG"], type="l", xlab="", ylab="% of total", main="GOOG")
+plot(df1[,"date"], df1[,"NIO"], type="l", xlab="", ylab="% of total", main="NIO")
+plot(df1[,"date"], df1[,"F"], type="l", xlab="", ylab="% of total", main="F")
+plot(df1[,"date"], df1[,"CCL"], type="l", xlab="", ylab="% of total", main="CCL")
+
+vv = t(tail(df1,1)[,-1])[order(vv[,1], decreasing = TRUE),]
+
 
 
 
@@ -163,9 +221,9 @@ png("Plot_Top_10.png", width = 1080, height=640)
 par(mfrow=c(3,4), mar=c(2,2,2,2))
 for ( s in top_nm ) {
   ix = which(tkr == s)
-  y = ll[[ix]]$y_daily["2019-01::"]
+  y = ll[[ix]]$y_daily["2020-01::"]
   df3 = data.frame(date=as.Date(index(y)), y=as.numeric(y))
-  y1 = get(s)["2019-01::", 6]
+  y1 = get(s)["2020-01::", 6]
   df4 = data.frame(date=index(y1), y1=as.numeric(y1))
   df5 = merge(x=df3, y=df4, by="date", all.x=FALSE, all.y=TRUE)
   tick.loc = as.integer(seq.int(from=1, to=nrow(df5), length.out=10))
@@ -200,5 +258,5 @@ dev.off()
 
 
 setwd(private_dir)
-save.image("Robintrack_Jul11.RData")
+save.image("Robintrack_Jul19.RData")
 

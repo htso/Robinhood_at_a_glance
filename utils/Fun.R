@@ -43,7 +43,7 @@ parse_ticker = function(s) {
   } else if (length(s) == 3) {
     if ( s[3] == "csv") x = paste(s[1], s[2], sep=".") else x = NA
   } else
-    stop("string has too many periods")
+    stop("string has too many periods.")
   return(x)
 }
 

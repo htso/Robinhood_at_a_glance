@@ -1,5 +1,5 @@
 # Robinhood at a Glance
-### -- July 12, 2020
+### -- July 19, 2020
 
 This is a preamble to full scale modeling of the Robinhood popularity data using machine learning. Before that, I want to 
 take a glance of the current market as seen in the Robinhood community. Here I use the dataset provided in [*robintrack*](https://robintrack.net), 
@@ -19,18 +19,19 @@ Another aspect to keep in mind is that popularity doesn't equate to exposure. A 
 Thus, there is no direct and necessary relationship between popularity and sentiment on a stock. In fact, the usefulness of this particular data point is to be evaluated and determined by a suitable ML model. On some stocks, a large popularity may be a good predictor of future return while it may have little value on others. 
 
 
-## Stocks held by at least 100k accounts [July 12th, 2020]
+## Stocks held by at least 100k accounts [July 19, 2020]
 Just a quick scan of the most popular holdings. Notice that some of these are ETF, e.g. `VOO`, `SPY`. 
-`"F"    "GE"   "AAL"  "DIS"  "DAL"  "AAPL" "MSFT" "CCL"  "GPRO" "ACB"  "TSLA" "PLUG" "NCLH" "AMZN" "BAC" 
-"SNAP" "BA"   "FIT"  "UAL"  "NIO"  "UBER" "HEXO" "CGC"  "BABA" "RCL"  "FB"   "TWTR" "INO"  "AMD"  "CRON"
-"SAVE" "ZNGA" "KO"   "MRNA" "T"    "TOPS" "SBUX" "LUV"  "APHA" "MRO"  "GNUS" "JBLU" "MGM"  "OGI"  "NFLX"
-"MFA"  "XOM"  "USO"  "UCO"  "HTZ"  "IVR"  "SPCE" "AMC"  "NVDA" "GM"   "WKHS" "NOK"  "VOO"  "NRZ"  "CPE" 
-"PLAY" "PFE"  "PENN" "CPRX" "SQ"   "SPY"  "TLRY" "SIRI" "NKE"  "WORK" "IDEX" "VSLR"`
+`"F"    "GE"   "AAL"  "DIS"  "DAL"  "AAPL" "MSFT" "CCL"  "GPRO" "TSLA" "ACB" 
+"PLUG" "AMZN" "NCLH" "BAC"  "SNAP" "FIT"  "BA"   "UAL"  "MRNA" "NIO"  "HEXO"
+"UBER" "BABA" "CGC"  "FB"   "RCL"  "TWTR" "AMD"  "CRON" "INO"  "ZNGA" "NFLX"
+"SAVE" "KO"   "T"    "TOPS" "SBUX" "APHA" "LUV"  "MRO"  "JBLU" "MGM"  "GNUS"
+"OGI"  "XOM"  "MFA"  "USO"  "SPCE" "UCO"  "HTZ"  "IVR"  "NVDA" "AMC"  "GM"  
+"WKHS" "NOK"  "VOO"  "PFE"  "NRZ"  "SQ"   "PLAY" "CPRX" "SPY"  "CPE"  "WORK"
+"SIRI" "TLRY" "PENN" "NKE"  "VSLR"`
 
 
 
-
-## Biggest Increase Last Week [Jul 12th, 2020]
+## Biggest Increase Last Week [Jul 19, 2020]
 These 10 stocks saw the biggest percent increase in user holdings last week. 
 
 
@@ -44,7 +45,7 @@ These 10 stocks saw the biggest percent increase in user holdings last week.
 
 
 
-## Biggest Decrease Last Week [Jul 12th, 2020]
+## Biggest Decrease Last Week [Jul 19, 2020]
 Likewise, these are the biggest losers last week.
 
 <p align="center"> 
@@ -53,7 +54,7 @@ Likewise, these are the biggest losers last week.
 
 
 
-## Top 10 Holdings [Jul 12th, 2020]
+## Top 10 Holdings [Jul 19, 2020]
 These are the favorites of the Robinhood community. 
 
 
@@ -65,15 +66,6 @@ These are the favorites of the Robinhood community.
 
 ![top_ten](plots/Plot_Top_10.png)
 
-
-
-
-## Largest % increase since Mar 20 [Jul 12th, 2020]
-Holdings in these stocks have gone up mutiple times. I use March 20 as the base level for comparison since that's the bottom of this bear market -- so far. 
-
-<p align="left"> 
-<img src="plots/LargestIncr_since_Mar20.png" width="100%">
-</p>
 
 
 
